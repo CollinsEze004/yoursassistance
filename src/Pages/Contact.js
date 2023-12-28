@@ -1,0 +1,216 @@
+import {
+  Box,
+  Flex,
+  Image,
+  Button,
+  Text,
+  Input,
+  AlertDialog,
+  Textarea,
+  AlertDialogOverlay,
+  AlertDialogContent,
+  AlertDialogHeader,
+  AlertDialogBody,
+  useDisclosure,
+} from "@chakra-ui/react";
+import React, { useState } from "react";
+import Header from "../Components/HeaderTwo";
+import Footer from "../Components/Footer";
+import pageCover from "../Assets/Svg/pageCover.svg";
+import caution from "../Assets/Svg/caution.svg";
+import success from "../Assets/Svg/success.svg";
+
+const Contact = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const cancelRef = React.useRef();
+  const [submit, setSubmit] = useState(false);
+
+  const handleSubmit = () => {
+    setSubmit(true);
+  };
+  return (
+    <Box>
+      <Box marginX="5%">
+        <Header />
+
+        <Text
+          fontWeight="700"
+          fontSize="40px"
+          textAlign="center"
+          marginTop="5%"
+          color="#0298DA"
+        >
+          Contact us
+        </Text>
+
+        <Box
+          backgroundColor="#0298DA"
+          borderRadius="20px"
+          marginX="10%"
+          marginY="3%"
+          paddingBottom="5%"
+        >
+          <Box textAlign="center" marginX="10%">
+            <Box color="white" padding="3% 0">
+              <Text fontWeight="500" fontSize="32px" marginTop="3%">
+                Talk to an Expert from our end
+              </Text>
+              <Text>
+                Get our expert advise on how to transform your brand ideas to
+                something amazing
+              </Text>
+            </Box>
+            <Box
+              borderRadius="10px"
+              margin="3%"
+              padding="5%"
+              backgroundColor="white"
+              marginBottom="7%"
+            >
+              <Text fontSize="28px" padding="3% 0">
+                Get in touch and schedule a meeting to discuss on how our and of
+                our services can boost your company
+              </Text>
+              <Input
+                marginY={{ base: "5%", md: "2%" }}
+                padding={{ base: "8% 3%", md: "3% 2%" }}
+                placeholder="Full Name"
+                type="text"
+              />
+              <Input
+                marginY={{ base: "5%", md: "2%" }}
+                padding={{ base: "8% 3%", md: "3% 2%" }}
+                placeholder="Company Name"
+                type="text"
+              />
+              <Input
+                marginY={{ base: "5%", md: "2%" }}
+                padding={{ base: "8% 3%", md: "3% 2%" }}
+                placeholder="Email Address"
+                type="email"
+              />
+              <Input
+                marginY={{ base: "5%", md: "2%" }}
+                padding={{ base: "8% 3%", md: "3% 2%" }}
+                placeholder="Phone Number"
+                type="phone"
+              />
+              <Input
+                marginY={{ base: "5%", md: "2%" }}
+                padding={{ base: "8% 3%", md: "3% 2%" }}
+                placeholder="Select Country"
+              />
+
+              <Input
+                marginY={{ base: "5%", md: "2%" }}
+                padding={{ base: "8% 3%", md: "3% 2%" }}
+                placeholder="Select City"
+              />
+
+              <Input
+                marginY={{ base: "5%", md: "2%" }}
+                padding={{ base: "8% 3%", md: "3% 2%" }}
+                placeholder="Select Service"
+              />
+
+              <Input
+                marginY={{ base: "5%", md: "2%" }}
+                padding={{ base: "8% 3%", md: "3% 2%" }}
+                placeholder="Select Country"
+              />
+
+              <Flex justifyContent={{ base: "center", md: "center" }}>
+                <Button
+                  backgroundColor="#0298DA"
+                  color="white"
+                  padding={{ base: "9% 15%", md: "4% 10%" }}
+                  onClick={onOpen}
+                  marginTop="2%"
+                >
+                  Submit
+                </Button>
+              </Flex>
+            </Box>
+          </Box>
+
+          <AlertDialog
+            motionPreset="slideInBottom"
+            leastDestructiveRef={cancelRef}
+            onClose={onClose}
+            isOpen={isOpen}
+            isCentered
+          >
+            <AlertDialogOverlay />
+
+            {submit ? (
+              <AlertDialogContent
+                marginX="2%"
+                paddingTop={{ base: "5%", md: "2%" }}
+              >
+                <Flex flexDirection="column" alignItems="center">
+                  <Image width={{ base: "20%", md: "15%" }} src={success} />
+                  <AlertDialogHeader textAlign="center">
+                    Success
+                  </AlertDialogHeader>
+                  <AlertDialogBody textAlign="center">
+                    Your inspection application has been sent successfully
+                  </AlertDialogBody>
+                  <Box padding="5% 0" textAlign="center">
+                    <Button
+                      onClick={onClose}
+                      color="white"
+                      backgroundColor="#017931"
+                      ml={3}
+                    >
+                      Return to Dashboard
+                    </Button>
+                  </Box>
+                </Flex>
+              </AlertDialogContent>
+            ) : (
+              <AlertDialogContent
+                marginX="2%"
+                paddingTop={{ base: "5%", md: "2%" }}
+              >
+                <Flex flexDirection="column" alignItems="center">
+                  <Image width={{ base: "20%", md: "15%" }} src={caution} />
+                  <AlertDialogHeader textAlign="center">
+                    Are you sure you want to submit
+                  </AlertDialogHeader>
+                  <AlertDialogBody textAlign="center">
+                    You can easily go make and make sure the information
+                    provided are correct.
+                  </AlertDialogBody>
+                  <Box padding="5% 0" textAlign="center">
+                    <Button
+                      backgroundColor="#FFB445"
+                      color="white"
+                      ref={cancelRef}
+                      onClick={onClose}
+                    >
+                      Back
+                    </Button>
+                    <Button
+                      onClick={handleSubmit}
+                      color="white"
+                      backgroundColor="#017931"
+                      ml={3}
+                    >
+                      Submit
+                    </Button>
+                  </Box>
+                </Flex>
+              </AlertDialogContent>
+            )}
+          </AlertDialog>
+        </Box>
+        <Flex justifyContent="center" marginTop="5%">
+          <Image src={pageCover} />
+        </Flex>
+        <Footer />
+      </Box>
+    </Box>
+  );
+};
+
+export default Contact;
