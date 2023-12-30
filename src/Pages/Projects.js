@@ -1,38 +1,20 @@
 import { Box, Button, Flex, Text, Image, color } from "@chakra-ui/react";
-import React from "react";
+import React, { useState } from "react";
 import HeaderTwo from "../Components/HeaderTwo";
-import project1 from "../Assets/Png/projectMain1.png";
-import project2 from "../Assets/Png/projectMain2.png";
-import project3 from "../Assets/Png/projectMain3.png";
-import project4 from "../Assets/Png/projectMain4.png";
 import ProjectCard from "../Components/ProjectCard";
 import pageCover from "../Assets/Svg/pageCover.svg";
 import Footer from "../Components/Footer";
+import data from "../Utilities/Data";
 
 const Projects = () => {
-  const projects = [
-    {
-      date: "2023-01-01",
-      imageSrc: project1,
-      description: "Project 1 description",
-    },
-    {
-      date: "2023-02-15",
-      imageSrc: project2,
-      description: "Project 2 description",
-    },
-    {
-      date: "2023-02-15",
-      imageSrc: project3,
-      description: "Project 3 description",
-    },
-    {
-      date: "2023-02-15",
-      imageSrc: project4,
-      description: "Project 4 description",
-    },
-    // Add more projects as needed
-  ];
+  const projectsPerPage = 4;
+  const [visibleProjects, setVisibleProjects] = useState(projectsPerPage);
+
+  const handleViewMore = () => {
+    setVisibleProjects(
+      (prevVisibleProjects) => prevVisibleProjects + projectsPerPage
+    );
+  };
 
   return (
     <Box>
@@ -165,12 +147,12 @@ const Projects = () => {
           </Flex>
         </Flex>
 
-        <Flex marginTop="5%" flexWrap="wrap" align="center">
-          {projects.map((project, index) => (
+        <Flex marginTop="5%" flexWrap="wrap" align="center" justifyContent="center">
+          {data.slice(0, visibleProjects).map((project, index) => (
             <ProjectCard
               key={index}
               date={project.date}
-              imageSrc={project.imageSrc}
+              imageSrc={project.imgSrc}
               description={project.description}
               style={{
                 marginTop: index % 2 === 0 ? "0" : "90px",
@@ -180,22 +162,25 @@ const Projects = () => {
           ))}
         </Flex>
 
-        <Box>
-          <Button
-            width="90%"
-            marginX="5%"
-            fontSize="36px"
-            backgroundColor="#0298DA"
-            fontWeight="bold"
-            paddingY="3%"
-            borderRadius="10px"
-            color="white"
-            colorScheme="red"
-            transition="1s ease-in"
-          >
-            View More
-          </Button>
-        </Box>
+        {visibleProjects < data.length && (
+          <Box>
+            <Button
+              width="90%"
+              marginX="5%"
+              fontSize="36px"
+              backgroundColor="#0298DA"
+              fontWeight="bold"
+              paddingY="3%"
+              borderRadius="10px"
+              color="white"
+              colorScheme="red"
+              transition="1s ease-in"
+              onClick={handleViewMore}
+            >
+              View More
+            </Button>
+          </Box>
+        )}
 
         <Flex justifyContent="center" marginTop="5%">
           <Image src={pageCover} />

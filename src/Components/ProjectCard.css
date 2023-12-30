@@ -1,0 +1,17 @@
+/* ProjectCard.css */
+.project-card {
+    transition: background-color 0.3s ease;
+  }
+  
+  .project-card.hovered {
+    cursor: pointer; /* optional: change cursor on hover */
+  }
+  
+  .project-card:hover .hover-content {
+    display: flex;
+  }
+  
+  .hover-content {
+    display: none;
+  }
+  

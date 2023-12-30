@@ -94,7 +94,7 @@ const HomePage = () => {
                 "It's not the best product that sells but the best marketed product.",
               ]}
               wrapper="span"
-              speed={20}
+              speed={30}
               style={{
                 display: "inline-block",
                 fontSize: "80px",
@@ -104,10 +104,7 @@ const HomePage = () => {
               }}
               repeat={0}
             />
-            {/* <Text fontSize="80px" fontWeight="600" width="70%">
-              It’s not the best product that sells but the best marketed
-              product.
-            </Text> */}
+  
             <Flex marginTop="2%">
               <Button
                 borderRadius="10px"

@@ -1,69 +1,145 @@
-import React from "react";
-import { Box, Flex, Image, Text } from "@chakra-ui/react";
-import img1 from "../Assets/Png/project1.png";
-import img2 from "../Assets/Png/project2.png";
-import img3 from "../Assets/Png/project3.png";
-import img4 from "../Assets/Png/project4.png";
+import React, { useState } from "react";
+import { Box, Button, Flex, Image, Text } from "@chakra-ui/react";
+import yoursassistance from "../Assets/Png/yoursassistance.png";
+import veracoth from "../Assets/Png/veracoth.png";
+import vixtus from "../Assets/Png/vixtus.png";
+import Xtraray from "../Assets/Png/Xtaray.png";
+import softlink from "../Assets/Png/Softlink.png";
+import capital from "../Assets/Png/capital.png";
+import nnaoma from "../Assets/Png/nnaoma.png";
+import ag from "../Assets/Png/ag.png";
+import janeg from "../Assets/Png/janeg.png";
+import img1 from "../Assets/Png/seedtime.png";
+import img2 from "../Assets/Png/project1.png";
+import img3 from "../Assets/Png/project2.png";
+import img4 from "../Assets/Png/project3.png";
+import img5 from "../Assets/Png/project4.png";
 
 const projects = [
   {
-    imgSrc: img1,
-    title: "The Two and The Bubbles",
-    link: "http://www.example.com/project1",
-    author: "Vlad Gerasimov",
-    date: "2005",
+    imgSrc: yoursassistance,
+    title: "Yoursassistance",
+    link: "click to view project",
+    services: "Branding, Content Creation, Graphics Design, UI/UX, Website",
+    date: "12-2023",
   },
   {
-    imgSrc: img2,
-    title: "Christmas Ice Skating",
-    link: "http://www.example.com/project2",
-    author: "Vlad Gerasimov",
-    date: "2008",
+    imgSrc: img1,
+    title: "Seedtime Landscape",
+    link: "click to view project",
+    services: "Branding, Graphics Design, Website and UI/UX",
+    date: "11-2023",
+  },
+  {
+    imgSrc: veracoth,
+    title: "Veracoth",
+    link: "click to view project",
+    services: "Branding, Content Creation, Graphics Design",
+    date: "09-2023",
+  },
+  {
+    imgSrc: vixtus,
+    title: "Vixtus Direct Living",
+    link: "click to view project",
+    services: "Branding, Content Creation, Graphics Design",
+    date: "09-2023",
   },
 
   {
     imgSrc: img3,
-    title: "Christmas Ice Skating",
-    link: "http://www.example.com/project2",
-    author: "Vlad Gerasimov",
-    date: "2008",
+    title: "Coastwide Church",
+    link: "Click to view Project",
+    services: "Branding, Graphics design, Content creation ",
+    date: "08-2022",
   },
 
   {
     imgSrc: img4,
-    title: "Christmas Ice Skating",
-    link: "http://www.example.com/project2",
-    author: "Vlad Gerasimov",
-    date: "2008",
+    title: "Dreadit",
+    link: "Click to view Project",
+    services: "Branding Graphics design",
+    date: "07-2022",
+  },
+  {
+    imgSrc: softlink,
+    title: "Softlink",
+    link: "Click to view Project",
+    services: "Branding, Graphics design ",
+    date: "09-2021",
   },
 
   {
-    imgSrc: img1,
-    title: "Christmas Ice Skating",
-    link: "http://www.example.com/project2",
-    author: "Vlad Gerasimov",
-    date: "2008",
+    imgSrc: img5,
+    title: "Adirebyteeny",
+    link: "Click to view Project",
+    services: "Branding, Graphics design ",
+    date: "10-2021",
   },
-
   {
     imgSrc: img2,
-    title: "Christmas Ice Skating",
-    link: "http://www.example.com/project2",
-    author: "Vlad Gerasimov",
-    date: "2008",
+    title: "Charis God",
+    link: "click to view project",
+    services: "Branding, Content Creation, Graphics Design",
+    date: "07-2022",
   },
 
   {
-    imgSrc: img3,
-    title: "Christmas Ice Skating",
-    link: "http://www.example.com/project2",
-    author: "Vlad Gerasimov",
-    date: "2008",
+    imgSrc: Xtraray,
+    title: "Xtraray",
+    link: "click to view project",
+    services: "Branding, Content Creation, Graphics Design",
+    date: "06-2021",
+  },
+
+  {
+    imgSrc: capital,
+    title: "Capital Global Trade",
+    link: "click to view project",
+    services: "Branding, Content Creation, Graphics Design",
+    date: "03-2021",
+  },
+
+  {
+    imgSrc: nnaoma,
+    title: "Nnaoma Global Ventures",
+    link: "click to view project",
+    services: "Branding, Content Creation, Graphics Design",
+    date: "02-2021",
+  },
+  {
+    imgSrc: ag,
+    title: "AG Global",
+    link: "click to view project",
+    services: "Branding, Graphics Design",
+    date: "01-2021",
+  },
+  {
+    imgSrc: janeg,
+    title: "Jane G Fashion Empire",
+    link: "click to view project",
+    services: "Branding, Graphics Design",
+    date: "02-2021",
   },
   // Add more project data as needed
 ];
 
 const Carousel = () => {
+  const [isHovered, setIsHovered] = useState(
+    Array(projects.length).fill(false)
+  );
+
+  const handleMouseEnter = (index) => {
+    const newHoverState = [...isHovered];
+    newHoverState[index] = true;
+    setIsHovered(newHoverState);
+  };
+
+  const handleMouseLeave = (index) => {
+    const newHoverState = [...isHovered];
+    newHoverState[index] = false;
+    setIsHovered(newHoverState);
+  };
+
   return (
     <Box marginTop="5%">
       <Box>
@@ -78,11 +154,11 @@ const Carousel = () => {
       </Box>
       <Flex p="30px">
         <Flex
-          height="700px"
+          height="780px"
           paddingTop="70px"
           overflowX="scroll"
           overflowY="hidden"
-          mb="30px"
+          //   mb="30px"
           css={{
             "&::-webkit-scrollbar": {
               width: "6px",
@@ -112,13 +188,15 @@ const Carousel = () => {
               transition="all .3s ease, opacity 2s ease,  top 1s ease"
               _nthChild={{ even: { marginTop: "100px" } }}
               _hover={{
-                height: "570px",
+                height: "640px",
                 padding: "15px",
                 transform: "translateY(-68px)",
               }}
               style={{
                 marginTop: index % 2 === 0 ? "0" : "90px",
               }}
+              onMouseEnter={() => handleMouseEnter(index)}
+              onMouseLeave={() => handleMouseLeave(index)}
             >
               <Box
                 as="figure"
@@ -139,19 +217,38 @@ const Carousel = () => {
                 <Box
                   fontSize="20px"
                   fontWeight="600"
-                  marginTop="2%"
-                  display="unset"
-                  _hover={{
-                    display: "block",
-                  }}
+                  paddingTop="3%"
+                  opacity={isHovered[index] ? 1 : 0}
                 >
-                  <Text>{project.title}</Text>
+                  <Text
+                    backgroundColor="#ED3237"
+                    color="white"
+                    padding="2% 2%"
+                    borderRadius="10px"
+                    marginTop="2%"
+                  >
+                    {project.title}
+                  </Text>
+                  <Text padding="2% 2%" fontSize="16px">
+                    {project.services}
+                  </Text>
+                  <Button
+                    backgroundColor="white"
+                    border="1px solid #0298DA"
+                    padding="5.5% 5%"
+                    borderRadius="10px"
+                    marginTop="2%"
+                    marginY="4%"
+                    color="#0298DA"
+                  >
+                    Click to view
+                  </Button>
                 </Box>
               </Box>
               <Box
                 className="date"
                 zIndex="1"
-                width="50px"
+                width="100px"
                 height="30px"
                 lineHeight="30px"
                 color="#fff"
