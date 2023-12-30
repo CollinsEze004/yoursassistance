@@ -51,6 +51,7 @@ const LogoAnimation = ({ onFinish }) => {
       alignItems="center"
       justifyContent="center"
       height="100vh"
+      backgroundColor="white"
     >
       {showText ? (
         <Flex justifyContent="center" alignItems="center">

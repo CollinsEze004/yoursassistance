@@ -25,7 +25,7 @@ function App() {
         // styles for the `body`
         body: {
           fontFamily: "Montserrat, sans-serif",
-          
+          backgroundColor: "#FAFAFA"
         },
       },
     },

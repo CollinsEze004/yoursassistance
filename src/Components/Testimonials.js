@@ -15,7 +15,7 @@ const Testimonials = () => {
         padding="5% 7%"
         alignItems="center"
       >
-        <Box flex="1">
+        <Box flex="1" marginRight="3%">
           <Image src={img} />
         </Box>
         <Box flex="1.5">

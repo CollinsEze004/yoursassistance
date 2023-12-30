@@ -9,22 +9,14 @@ import {
   MenuButton,
   MenuItem,
   MenuList,
+  List,
+  ListItem,
 } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import logo from "../Assets/Svg/logoW.svg";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { useMediaQuery } from "@chakra-ui/react";
-// import menu from "../Assets/Svg/Menu.svg";
-// import HomeIconA from "../Assets/Svg/Home.svg";
-// import HomeIconNA from "../Assets/Svg/HomeNA.svg";
-// import ServiceA from "../Assets/Svg/Service.svg";
-// import ServiceNA from "../Assets/Svg/ServiceNA.svg";
-// import ReviewsA from "../Assets/Svg/Reviews.svg";
-// import ReviewsNA from "../Assets/Svg/ReviewsNA.svg";
-// import PortfolioA from "../Assets/Svg/Portfolio.svg";
-// import PortfolioNA from "../Assets/Svg/PortfolioNA.svg";
-// import ContactA from "../Assets/Svg/Contact.svg";
-// import ContactNA from "../Assets/Svg/ContactNA.svg";
+import "./Header.css";
 
 const NavLinkWithLine = ({ to, children }) => {
   const [isMobile] = useMediaQuery("(max-width: 768px)");
@@ -51,7 +43,7 @@ const NavLinkWithLine = ({ to, children }) => {
               color: isActive ? "#0298DA" : "white",
               fontWeight: isActive ? "600" : "500",
               backgroundColor: isActive ? "white" : "transparent",
-              padding: "8px 16px", // Adjust padding as needed
+              // padding: "18px 20px",
               borderRadius: "5px", // Add border-radius for a button-like appearance
               textDecoration: "none", // Remove underline
               display: "inline-block", // Make it a block to allow setting width and height
@@ -68,6 +60,16 @@ const NavLinkWithLine = ({ to, children }) => {
 
 const Header = () => {
   const [activeLink, setActiveLink] = useState("");
+  const [isSticky, setIsSticky] = useState(false);
+  const [visibleMenu, setVisibleMenu] = useState(null);
+
+  const handleMenuHover = (index) => {
+    setVisibleMenu(index);
+  };
+
+  const handleMenuLeave = () => {
+    setVisibleMenu(null);
+  };
 
   const [isMobile] = useMediaQuery("(max-width: 768px)");
   const handleLinkClick = (link) => {
@@ -77,6 +79,25 @@ const Header = () => {
   const renderIcon = (normalIcon, activeIcon) => {
     return activeLink === normalIcon ? activeIcon : normalIcon;
   };
+
+  const handleScroll = () => {
+    const scrollPosition = window.scrollY;
+    const stickyThreshold = 100; // Adjust this value as needed
+
+    if (scrollPosition > stickyThreshold) {
+      setIsSticky(true);
+    } else {
+      setIsSticky(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <Box>
@@ -153,28 +174,177 @@ const Header = () => {
         </Flex> */
         }
       ) : (
-        <Flex paddingTop="2%" alignItems="center">
+        <Flex
+          className={`sticky-header-container ${isSticky ? "sticky" : ""}`}
+          paddingTop="1%"
+          alignItems="center"
+        >
           <Box flex="1">
-            <Image src={logo} />
+            <Image width="40%" src={logo} />
           </Box>
 
-          <Flex flex="1" justifyContent="center">
-            <Box>
-              <NavLinkWithLine to="/">Home</NavLinkWithLine>
-            </Box>
-            <Spacer />
-            <Box>
-              <NavLinkWithLine to="/projects">Projects</NavLinkWithLine>
-            </Box>
-            <Spacer />
-            <Box>
-              <NavLinkWithLine to="/services">Services</NavLinkWithLine>
-            </Box>
-            <Spacer />
-            <Box>
-              <NavLinkWithLine to="/about-us">About</NavLinkWithLine>
-            </Box>
-          </Flex>
+          <Box id="container">
+            <List id="menu" styleType="none" padding="0">
+              <ListItem
+                display="block"
+                position="relative"
+                zIndex="10"
+                padding="13px 20px 13px 20px"
+                textDecoration="none"
+                color="rgba(75,75,75,1)"
+                lineHeight="1"
+                fontWeight="600"
+                fontSize="12px"
+                letterSpacing="-0.05em"
+                background="transparent"
+                textShadow="0 1px 1px rgba(255,255,255,.9)"
+                transition="all .25s ease-in-out"
+              >
+                <NavLinkWithLine to="/">Home</NavLinkWithLine>
+              </ListItem>
+
+              <ListItem
+                onMouseEnter={() => handleMenuHover(1)}
+                onMouseLeave={handleMenuLeave}
+                position="relative"
+                perspective="1000px"
+              >
+                <Link
+                  display="block"
+                  position="relative"
+                  zIndex="10"
+                  textDecoration="none"
+                  color="rgba(75,75,75,1)"
+                  lineHeight="1"
+                  fontWeight="600"
+                  fontSize="12px"
+                  letterSpacing="-0.05em"
+                  background="transparent"
+                  textShadow="0 1px 1px rgba(255,255,255,.9)"
+                  transition="all .25s ease-in-out"
+                >
+                  <NavLinkWithLine to="/projects">Projects</NavLinkWithLine>
+                </Link>
+
+                <List
+                  className={visibleMenu === 1 ? "visible" : ""}
+                  position="absolute"
+                  left="0"
+                  zIndex="1"
+                  width="200px"
+                  padding="0"
+                  opacity="0"
+                  visibility="hidden"
+                  borderBottomLeftRadius="4px"
+                  borderBottomRightRadius="4px"
+                  background="transparent"
+                  overflow="hidden"
+                  transformOrigin="50% 0%"
+                >
+                  <ListItem>
+                    <Link href="#">Chairs God</Link>
+                  </ListItem>
+                  <ListItem>
+                    <Link href="#">Dreadit</Link>
+                  </ListItem>
+                  <ListItem>
+                    <Link href="#">Seedtime Landscape</Link>
+                  </ListItem>
+                  <ListItem>
+                    <Link href="#">Coastwide Church</Link>
+                  </ListItem>
+                  <ListItem>
+                    <Link href="#">Adire Teeny</Link>
+                  </ListItem>
+                </List>
+              </ListItem>
+
+              <ListItem
+                onMouseEnter={() => handleMenuHover(1)}
+                onMouseLeave={handleMenuLeave}
+                float="left"
+                position="relative"
+                perspective="1000px"
+              >
+                <Link
+                  display="block"
+                  position="relative"
+                  zIndex="10"
+                  // padding="13px 20px 13px 20px"
+                  textDecoration="none"
+                  color="rgba(75,75,75,1)"
+                  lineHeight="1"
+                  fontWeight="600"
+                  fontSize="12px"
+                  letterSpacing="-0.05em"
+                  background="transparent"
+                  textShadow="0 1px 1px rgba(255,255,255,.9)"
+                  transition="all .25s ease-in-out"
+                >
+                  <NavLinkWithLine to="/services">Services</NavLinkWithLine>
+                </Link>
+
+                <List
+                  className={visibleMenu === 1 ? "visible" : ""}
+                  position="absolute"
+                  left="0"
+                  zIndex="1"
+                  width="200px"
+                  padding="0"
+                  opacity="0"
+                  visibility="hidden"
+                  borderBottomLeftRadius="4px"
+                  borderBottomRightRadius="4px"
+                  background="transparent"
+                  overflow="hidden"
+                  transformOrigin="50% 0%"
+                >
+                  <ListItem>
+                    <Link href="#">Brand Identity Design</Link>
+                  </ListItem>
+                  <ListItem>
+                    <Link href="#">Graphics Design</Link>
+                  </ListItem>
+                  <ListItem>
+                    <Link href="#">Web Development</Link>
+                  </ListItem>
+                  <ListItem>
+                    <Link href="#">Digital Marketing</Link>
+                  </ListItem>
+                  <ListItem>
+                    <Link href="#">Product Design</Link>
+                  </ListItem>
+                  <ListItem>
+                    <Link href="#">UI/UX Design</Link>
+                  </ListItem>
+                  <ListItem>
+                    <Link href="#">Content Design</Link>
+                  </ListItem>
+                  <ListItem>
+                    <Link href="#">Animations</Link>
+                  </ListItem>
+                </List>
+              </ListItem>
+             
+              <ListItem
+                display="block"
+                position="relative"
+                zIndex="10"
+                padding="13px 20px 13px 20px"
+                textDecoration="none"
+                color="rgba(75,75,75,1)"
+                lineHeight="1"
+                fontWeight="600"
+                fontSize="12px"
+                letterSpacing="-0.05em"
+                background="transparent"
+                textShadow="0 1px 1px rgba(255,255,255,.9)"
+                transition="all .25s ease-in-out"
+              >
+                <NavLinkWithLine to="/about-us">About</NavLinkWithLine>
+              </ListItem>
+            </List>
+          </Box>
 
           <Box flex="1">
             <Button

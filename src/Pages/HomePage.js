@@ -16,6 +16,8 @@ import HomeServices from "../Components/HomeServices";
 import Carousel from "../Components/Carousel";
 import Testimonials from "../Components/Testimonials";
 import Footer from "../Components/Footer";
+import ImageGallery from "../Components/ImageGallery";
+import { TypeAnimation } from "react-type-animation";
 
 const HomePage = () => {
   const [backgroundIndex, setBackgroundIndex] = useState(0);
@@ -39,6 +41,36 @@ const HomePage = () => {
     return () => clearInterval(intervalId);
   }, []);
 
+  const AnimatedCard = ({ imageSrc, title, description }) => {
+    return (
+      <Flex
+        backgroundColor="white"
+        flex="1"
+        flexDirection="column"
+        alignItems="center"
+        justifyContent="center"
+        borderRadius="40px"
+        paddingY="2%"
+        marginX="1%"
+        boxShadow="0px 4px 8px rgba(0, 0, 0, 0.1)"
+        _hover={{
+          transform: "scale(1.05)",
+          backgroundColor: "rgba(2, 152, 218, 0.1)",
+        transition:"transform 1s ease-in-out"
+
+        }} // Apply the hover effect
+      >
+        <Image width="85%" src={imageSrc} />
+        <Text marginTop="2%" color="#393637" fontSize="24px" fontWeight="600">
+          {title}
+        </Text>
+        <Text width="90%" textAlign="center">
+          {description}
+        </Text>
+      </Flex>
+    );
+  };
+
   return (
     <Box>
       <Box
@@ -57,18 +89,33 @@ const HomePage = () => {
         >
           <Header />
           <Flex flexDirection="column" justifyContent="center" height="80vh">
-            <Text fontSize="80px" fontWeight="600" width="70%">
+            <TypeAnimation
+              sequence={[
+                "It's not the best product that sells but the best marketed product.",
+              ]}
+              wrapper="span"
+              speed={20}
+              style={{
+                display: "inline-block",
+                fontSize: "80px",
+                color: "white",
+                fontWeight: "600",
+                width: "70%",
+              }}
+              repeat={0}
+            />
+            {/* <Text fontSize="80px" fontWeight="600" width="70%">
               It’s not the best product that sells but the best marketed
               product.
-            </Text>
-            <Flex>
+            </Text> */}
+            <Flex marginTop="2%">
               <Button
                 borderRadius="10px"
                 marginRight="1%"
                 padding="2% 3%"
                 backgroundColor="#0298DA"
                 color="white"
-                colorScheme='red'
+                colorScheme="red"
                 transition="1s ease-in"
               >
                 Explore Services
@@ -78,7 +125,6 @@ const HomePage = () => {
                 padding="2% 3%"
                 backgroundColor="white"
                 color="#0298DA"
-               
               >
                 About Us
               </Button>
@@ -96,44 +142,24 @@ const HomePage = () => {
         </Box>
 
         <Flex marginTop="3%">
-          <Box flex="1">
-            <Image src={brand1} />
-            <Text color="#393637" fontSize="24px" fontWeight="600">
-              Creating Identity and Recognition
-            </Text>
-            <Text>
-              Branding gives your business a distinguishable personality,
-              separating you from competitors in a crowded market. A consistent
-              brand image (logo, colors, fonts, etc.) makes you easily
-              recognizable, helping customers find and remember you.
-            </Text>
-          </Box>
+          <AnimatedCard
+            imageSrc={brand1}
+            title="Creating Identity and Recognition"
+            description="Branding gives your business a distinguishable personality, separating you from competitors in a crowded market. A consistent brand image (logo, colors, fonts, etc.) makes you easily recognizable, helping customers find and remember you."
+          />
 
-          <Box marginX="2%" flex="1">
-            <Image src={brand2} />
-            <Text color="#393637" fontSize="24px" fontWeight="600">
-              Builds Trust and Credibility
-            </Text>
-            <Text>
-              A well-developed brand conveys professionalism and reliability,
-              boosting your customer's confidence in your business. Consistent
-              branding across all platforms - website, social media, marketing
-              materials - reinforces this positive image.
-            </Text>
-          </Box>
+          <AnimatedCard
+            imageSrc={brand2}
+            title="Builds Trust and Credibility"
+            description="A well-developed brand conveys professionalism and reliability, boosting your customer's confidence in your business. Consistent branding across all platforms - website, social media, marketing materials - reinforces this positive image."
+            marginX="2%"
+          />
 
-          <Box flex="1">
-            <Image src={brand3} />
-            <Text color="#393637" fontSize="24px" fontWeight="600">
-              Influences Customer Choice
-            </Text>
-            <Text>
-              Branding goes beyond visuals; it communicates your values,
-              mission, and unique selling proposition. This messaging resonates
-              with customers who identify with your brand, making them more
-              likely to choose you over competitors.
-            </Text>
-          </Box>
+          <AnimatedCard
+            imageSrc={brand3}
+            title="Influences Customer Choice"
+            description="Branding goes beyond visuals; it communicates your values, mission, and unique selling proposition. This messaging resonates with customers who identify with your brand, making them more likely to choose you over competitors."
+          />
         </Flex>
 
         <Flex
@@ -154,7 +180,7 @@ const HomePage = () => {
             client to craft a bespoke brand identity and digital strategy that
             drives real results.
           </Text>
-          <Text  marginTop="1%" width="70%" textAlign="center">
+          <Text marginTop="1%" width="70%" textAlign="center">
             We're not afraid to push boundaries and embrace the latest trends.
             we stay ahead of the curve, ensuring their brand identity remains
             fresh, relevant, and always ahead of the competition.
@@ -174,6 +200,7 @@ const HomePage = () => {
         </Flex>
       </Box>
       <HomeServices />
+      <ImageGallery />
       <Carousel />
       <Testimonials />
       <Footer />

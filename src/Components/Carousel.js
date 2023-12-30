@@ -78,7 +78,8 @@ const Carousel = () => {
       </Box>
       <Flex p="30px">
         <Flex
-          height="600px"
+          height="700px"
+          paddingTop="70px"
           overflowX="scroll"
           overflowY="hidden"
           mb="30px"
@@ -103,7 +104,7 @@ const Carousel = () => {
               height="400px"
               margin="70px 20px 0"
               padding="5px"
-              borderRadius="2px"
+              borderRadius="20px"
               bgColor="white"
               fontSize="14px"
               position="relative"

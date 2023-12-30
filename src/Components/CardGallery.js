@@ -23,6 +23,10 @@ const Card = ({ dataImage, children }) => {
   useEffect(() => {
     setWidth(cardRef.current.offsetWidth);
     setHeight(cardRef.current.offsetHeight);
+
+    // Reset mouse position on component mount
+    setMouseX(cardRef.current.offsetWidth / 2);
+    setMouseY(cardRef.current.offsetHeight / 2);
   }, []);
 
   const calculateRotation = (coordinate, dimension) => {
