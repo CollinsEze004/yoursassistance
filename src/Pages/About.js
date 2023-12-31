@@ -14,11 +14,11 @@ import Footer from "../Components/Footer";
 const About = () => {
   return (
     <Box>
-      <Box paddingX="5%" backgroundColor="#0298DA">
+      <Box paddingX="3%" backgroundColor="#0298DA">
         <Header />
         <Flex justifyContent="center">
           <Flex
-            width="50%"
+            width={{ base: "90%", md: "50%" }}
             justifyContent="center"
             alignItems="center"
             marginY="5%"
@@ -32,18 +32,34 @@ const About = () => {
       </Box>
 
       <Box marginX="5%" color="#393637" fontWeight="600">
-        <Box marginTop="2%" width="70%">
-          <Text fontSize="96px" fontWeight="bold" color="#0298DA">
+        <Box marginTop="2%" width={{ base: "100%", md: "70%" }}>
+          <Text
+            fontSize={{ base: "32px", md: "96px" }}
+            fontWeight="bold"
+            color="#0298DA"
+          >
             From Brand Whispers To{" "}
             <span style={{ color: "#ED3237" }}>Digital Roars.</span>
           </Text>
         </Box>
-        <Flex alignItems="center" marginTop="5%">
-          <Box width="80%" flex="1">
-            <Text color="#0298DA" fontSize="48px" fontWeight="700">
+        <Flex
+          alignItems="center"
+          marginTop="5%"
+          flexDirection={{ base: "column", md: "row" }}
+        >
+          <Box width={{ base: "100%", md: "80%" }} flex="1">
+            <Text
+              color="#0298DA"
+              fontSize={{ base: "36px", md: "48px" }}
+              fontWeight="700"
+            >
               Welcome to Yoursassistance
             </Text>
-            <Text width="90%">
+            <Text
+              width={{ base: "100", md: "90%" }}
+              fontWeight={{ base: "" }}
+              fontSize={{ base: "14px", md: "16px" }}
+            >
               At Yoursassistance, we are your digital partners, dedicated to
               creating an online space that reflects our commitment to
               excellence in branding, web development, UI/UX design, digital
@@ -54,19 +70,26 @@ const About = () => {
             </Text>
           </Box>
 
-          <Box flex="1">
+          <Box flex="1" marginTop={{ base: "5%", md: "0" }}>
             <Image src={logoB} />
           </Box>
         </Flex>
 
         <Flex flexDirection="column" marginTop="5%">
-          <Flex alignItems="center">
+          <Flex
+            alignItems="center"
+            flexDirection={{ base: "column", md: "row" }}
+          >
             <Box flex="1">
               <Image width="80%" src={img1} />
             </Box>
 
             <Box flex="1">
-              <Text color="#0298DA" fontSize="48px" fontWeight="700">
+              <Text
+                color="#0298DA"
+                fontSize={{ base: "32px", md: "48px" }}
+                fontWeight="700"
+              >
                 Our Mission
               </Text>
               <Text>
@@ -79,13 +102,21 @@ const About = () => {
             </Box>
           </Flex>
 
-          <Flex alignItems="center" flexDirection="row-reverse">
+          <Flex
+            alignItems="center"
+            flexDirection={{ base: "column", md: "row-reverse" }}
+            marginTop={{ base: "15%", md: "0" }}
+          >
             <Box flex="1">
               <Image width="90%" src={img2} />
             </Box>
 
             <Box flex="1">
-              <Text color="#0298DA" fontSize="48px" fontWeight="700">
+              <Text
+                color="#0298DA"
+                fontSize={{ base: "32px", md: "48px" }}
+                fontWeight="700"
+              >
                 What Sets Us Apart
               </Text>
               <Text>
@@ -98,13 +129,21 @@ const About = () => {
             </Box>
           </Flex>
 
-          <Flex marginTop="3%" alignItems="center">
+          <Flex
+            marginTop={{ base: "10%", md: "3%" }}
+            alignItems="center"
+            flexDirection={{ base: "column", md: "row" }}
+          >
             <Box flex="1">
               <Image width="90%" src={img3} />
             </Box>
 
             <Box flex="1">
-              <Text color="#0298DA" fontSize="48px" fontWeight="700">
+              <Text
+                color="#0298DA"
+                fontSize={{ base: "32px", md: "48px" }}
+                fontWeight="700"
+              >
                 Showcase of Excellence
               </Text>
               <Text>
@@ -117,9 +156,9 @@ const About = () => {
               <Button
                 backgroundColor="#0298DA"
                 color="white"
-                padding="4% 5%"
+                padding={{ base: "8% 7%", md: "4% 5%" }}
                 marginTop="3%"
-                colorScheme='red'
+                colorScheme="red"
                 transition="1s ease-in"
               >
                 Explore Projects
@@ -127,13 +166,21 @@ const About = () => {
             </Box>
           </Flex>
 
-          <Flex alignItems="center" flexDirection="row-reverse" marginTop="3%">
+          <Flex
+            alignItems="center"
+            flexDirection={{ base: "column", md: "row-reverse" }}
+            marginTop={{ base: "10%", md: "3%" }}
+          >
             <Box flex="1">
               <Image width="90%" src={img4} />
             </Box>
 
             <Box flex="1">
-              <Text color="#0298DA" fontSize="48px" fontWeight="700">
+              <Text
+                color="#0298DA"
+                fontSize={{ base: "32px", md: "48px" }}
+                fontWeight="700"
+              >
                 Interactive User Experience
               </Text>
               <Text width="90%">
@@ -145,9 +192,9 @@ const About = () => {
               <Button
                 backgroundColor="#0298DA"
                 color="white"
-                padding="4% 5%"
+                padding={{ base: "8% 7%", md: "4% 5%" }}
                 marginTop="3%"
-                colorScheme='red'
+                colorScheme="red"
                 transition="1s ease-in"
               >
                 Explore Projects
@@ -155,13 +202,21 @@ const About = () => {
             </Box>
           </Flex>
 
-          <Flex alignItems="center" marginTop="3%">
+          <Flex
+            alignItems="center"
+            marginTop={{ base: "10%", md: "3%" }}
+            flexDirection={{ base: "column", md: "row" }}
+          >
             <Box flex="1">
               <Image width="90%" src={img5} />
             </Box>
 
             <Box flex="1">
-              <Text color="#0298DA" fontSize="48px" fontWeight="700">
+              <Text
+                color="#0298DA"
+                fontSize={{ base: "32px", md: "48px" }}
+                fontWeight="700"
+              >
                 Get in Touch
               </Text>
               <Text>
@@ -180,9 +235,9 @@ const About = () => {
               <Button
                 backgroundColor="#0298DA"
                 color="white"
-                padding="4% 5%"
+                padding={{ base: "8% 7%", md: "4% 5%" }}
                 marginTop="3%"
-                colorScheme='red'
+                colorScheme="red"
                 transition="1s ease-in"
               >
                 Contact us
@@ -192,7 +247,7 @@ const About = () => {
         </Flex>
       </Box>
 
-      <Flex justifyContent="center" marginTop="5%">
+      <Flex justifyContent="center" marginTop="5%" marginX={{base: '5%', md: "0"}}>
         <Image src={pageCover} />
       </Flex>
 

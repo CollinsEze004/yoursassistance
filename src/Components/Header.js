@@ -14,9 +14,12 @@ import {
 } from "@chakra-ui/react";
 import React, { useState, useEffect } from "react";
 import logo from "../Assets/Svg/logoW.svg";
+import logoM from "../Assets/Svg/logoM.svg";
 import { NavLink, Link } from "react-router-dom";
 import { useMediaQuery } from "@chakra-ui/react";
 import "./Header.css";
+import menu from "../Assets/Svg/menu.svg";
+
 
 const NavLinkWithLine = ({ to, children }) => {
   const [isMobile] = useMediaQuery("(max-width: 768px)");
@@ -29,7 +32,7 @@ const NavLinkWithLine = ({ to, children }) => {
             to={to}
             style={({ isActive }) => {
               return {
-                color: isActive ? "#017931" : "#002D3A",
+                color: isActive ? "#0298DA" : "#393637",
                 fontWeight: isActive ? "600" : "500",
               };
             }}
@@ -43,10 +46,9 @@ const NavLinkWithLine = ({ to, children }) => {
               color: isActive ? "#0298DA" : "white",
               fontWeight: isActive ? "600" : "500",
               backgroundColor: isActive ? "white" : "transparent",
-              // padding: "18px 20px",
-              borderRadius: "5px", // Add border-radius for a button-like appearance
-              textDecoration: "none", // Remove underline
-              display: "inline-block", // Make it a block to allow setting width and height
+              borderRadius: "5px",
+              textDecoration: "none",
+              display: "inline-block",
               width: "fit-content",
             })}
           >
@@ -62,6 +64,7 @@ const Header = () => {
   const [activeLink, setActiveLink] = useState("");
   const [isSticky, setIsSticky] = useState(false);
   const [visibleMenu, setVisibleMenu] = useState(null);
+  const [isMobile] = useMediaQuery("(max-width: 768px)");
 
   const handleMenuHover = (index) => {
     setVisibleMenu(index);
@@ -69,15 +72,6 @@ const Header = () => {
 
   const handleMenuLeave = () => {
     setVisibleMenu(null);
-  };
-
-  const [isMobile] = useMediaQuery("(max-width: 768px)");
-  const handleLinkClick = (link) => {
-    setActiveLink(link);
-  };
-
-  const renderIcon = (normalIcon, activeIcon) => {
-    return activeLink === normalIcon ? activeIcon : normalIcon;
   };
 
   const handleScroll = () => {
@@ -102,77 +96,47 @@ const Header = () => {
   return (
     <Box>
       {isMobile ? (
-        {
-          /* <Flex padding="3%">
-          <Image width="20%" src={logo} />
+        <Flex padding="3%">
+          <Image width="50%" src={logoM} />
           <Spacer />
 
           <Menu>
-            <MenuButton backgroundColor="#002D3A" marginRight="-5%" as={Button}>
+            <MenuButton
+              backgroundColor="rgba(0, 0, 0, 0)"
+              marginRight="-5%"
+              as={Button}
+              _hover={{ backgroundColor: "rgba(0, 0, 0, 0)" }}
+            >
               <Image src={menu} />
             </MenuButton>
             <MenuList height="fit-content" paddingY="5%" color="#002D3A">
               <MenuItem width="100%">
-                <Image src={renderIcon(HomeIconNA, HomeIconA)} />
-                <NavLinkWithLine
-                  to="/"
-                  onClick={() => handleLinkClick(HomeIconNA)}
-                >
-                  Home
-                </NavLinkWithLine>
+                <NavLinkWithLine to="/">Home</NavLinkWithLine>
               </MenuItem>
               <MenuItem width="100%">
-                <Image src={renderIcon(ServiceNA, ServiceA)} />
-                <NavLinkWithLine
-                  to="/services"
-                  onClick={() => handleLinkClick(HomeIconNA)}
-                >
-                  Services
-                </NavLinkWithLine>
+                <NavLinkWithLine to="/services">Services</NavLinkWithLine>
               </MenuItem>
               <MenuItem>
-                <Image src={renderIcon(PortfolioNA, PortfolioA)} />
-                <NavLinkWithLine
-                  to="/portfolio"
-                  onClick={() => handleLinkClick(HomeIconNA)}
-                >
-                  Portfolio
-                </NavLinkWithLine>
+                <NavLinkWithLine to="/projects">Projects</NavLinkWithLine>
               </MenuItem>
               <MenuItem>
-                <Image src={renderIcon(ReviewsNA, ReviewsA)} />
-                <NavLinkWithLine
-                  to="/reviews"
-                  onClick={() => handleLinkClick(HomeIconNA)}
-                >
-                  Reviews
-                </NavLinkWithLine>
+                <NavLinkWithLine to="/about-us">About</NavLinkWithLine>
               </MenuItem>
-              <MenuItem>
-                <Image src={renderIcon(ContactNA, ContactA)} />
-                <NavLinkWithLine
-                  to="/contact-us"
-                  onClick={() => handleLinkClick(HomeIconNA)}
-                >
-                  Contact
-                </NavLinkWithLine>
-              </MenuItem>
-              <Box textAlign="center">
+              <Box textAlign="center" marginTop="5%">
                 <Button
-                  backgroundColor="#FFB445"
+                  backgroundColor="#0298DA"
                   color="white"
                   borderRadius="5px"
                   paddingY="5%"
-                  paddingX="6%"
+                  paddingX="20%"
                   fontSize="14px"
                 >
-                  <NavLink to="/book-appointment">Book an appointment</NavLink>
+                  <NavLink to="/book-appointment">Contact Us</NavLink>
                 </Button>
               </Box>
             </MenuList>
           </Menu>
-        </Flex> */
-        }
+        </Flex>
       ) : (
         <Flex
           className={`sticky-header-container ${isSticky ? "sticky" : ""}`}
@@ -325,7 +289,7 @@ const Header = () => {
                   </ListItem>
                 </List>
               </ListItem>
-             
+
               <ListItem
                 display="block"
                 position="relative"

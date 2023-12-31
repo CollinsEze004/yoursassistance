@@ -18,7 +18,7 @@ const Projects = () => {
 
   return (
     <Box>
-      <Box paddingX="5%">
+      <Box paddingX="2%">
         <HeaderTwo />
         <Flex
           flexDirection="column"
@@ -33,48 +33,55 @@ const Projects = () => {
           <Flex
             marginTop="3%"
             justifyContent="center"
-            width="60%"
             alignItems="center"
+            width={{ base: "100%", md: "60%" }}
+            flexWrap={{ base: "wrap", md: "nowrap" }}
           >
             <Button
               backgroundColor="#0298DA"
               border="1px solid #0298DA"
-              padding="3% 6%"
+              padding={{ base: "6% 8%", md: "3% 6%" }}
               borderRadius="10px"
               marginX="2%"
               color="white"
               colorScheme="messanger"
               transition="1s ease-in"
+              fontSize={{ base: "14px", md: "16px" }}
             >
               All
             </Button>
             <Button
               backgroundColor="white"
               border="1px solid #0298DA"
-              padding="3% 6%"
+              padding={{ base: "6% 6%", md: "3% 6%" }}
               borderRadius="10px"
               marginX="2%"
               color="#0298DA"
+              fontSize={{ base: "14px", md: "16px" }}
             >
               Brand Identity Design
             </Button>
             <Button
               backgroundColor="white"
               border="1px solid #0298DA"
-              padding="3% 6%"
+              padding={{ base: "6% 6%", md: "3% 6%" }}
               borderRadius="10px"
               marginX="2%"
               color="#0298DA"
+              marginTop={{ base: "2%", md: "0" }}
+              fontSize={{ base: "14px", md: "16px" }}
             >
               Digital marketing
             </Button>
             <Button
               backgroundColor="white"
               border="1px solid #0298DA"
-              padding="3% 6%"
+              padding={{ base: "6% 6%", md: "3% 6%" }}
               borderRadius="10px"
               marginX="2%"
               color="#0298DA"
+              fontSize={{ base: "14px", md: "16px" }}
+              marginTop={{ base: "2%", md: "0" }}
             >
               Web Development
             </Button>
@@ -83,36 +90,43 @@ const Projects = () => {
           <Flex
             marginTop="1.5%"
             justifyContent="center"
-            width="60%"
             alignItems="center"
+            flexWrap={{ base: "wrap", md: "nowrap" }}
+            width={{ base: "100%", md: "60%" }}
           >
             <Button
               backgroundColor="white"
               border="1px solid #0298DA"
-              padding="3% 6%"
+              padding={{ base: "6% 8%", md: "3% 6%" }}
               borderRadius="10px"
               marginX="2%"
               color="#0298DA"
+              fontSize={{ base: "14px", md: "16px" }}
+              marginTop={{ base: "2%", md: "0" }}
             >
               UI/UX Design
             </Button>
             <Button
               backgroundColor="white"
               border="1px solid #0298DA"
-              padding="3% 6%"
+              padding={{ base: "6% 8%", md: "3% 6%" }}
               borderRadius="10px"
               marginX="2%"
               color="#0298DA"
+              fontSize={{ base: "14px", md: "16px" }}
+              marginTop={{ base: "2%", md: "0" }}
             >
               Product Designs
             </Button>
             <Button
               backgroundColor="white"
               border="1px solid #0298DA"
-              padding="3% 6%"
+              padding={{ base: "6% 8%", md: "3% 6%" }}
               borderRadius="10px"
               marginX="2%"
               color="#0298DA"
+              fontSize={{ base: "14px", md: "16px" }}
+              marginTop={{ base: "2%", md: "0" }}
             >
               Graphics Design
             </Button>
@@ -121,33 +135,42 @@ const Projects = () => {
           <Flex
             marginTop="1.5%"
             justifyContent="center"
-            width="60%"
+            width={{ base: "100%", md: "60%" }}
             alignItems="center"
+            flexWrap={{ base: "wrap", md: "nowrap" }}
+            
           >
             <Button
               backgroundColor="white"
               border="1px solid #0298DA"
-              padding="3% 6%"
+              padding={{ base: "6% 8%", md: "3% 6%" }}
               borderRadius="10px"
               marginX="2%"
               color="#0298DA"
+              marginTop={{ base: "2%", md: "0" }}
             >
               Content Design
             </Button>
             <Button
               backgroundColor="white"
               border="1px solid #0298DA"
-              padding="3% 6%"
+              padding={{ base: "6% 8%", md: "3% 6%" }}
               borderRadius="10px"
               marginX="2%"
               color="#0298DA"
+              marginTop={{ base: "2%", md: "0" }}
             >
               Animations
             </Button>
           </Flex>
         </Flex>
 
-        <Flex marginTop="5%" flexWrap="wrap" align="center" justifyContent="center">
+        <Flex
+          marginTop="5%"
+          flexWrap="wrap"
+          align="center"
+          justifyContent="center"
+        >
           {data.slice(0, visibleProjects).map((project, index) => (
             <ProjectCard
               key={index}
@@ -167,15 +190,16 @@ const Projects = () => {
             <Button
               width="90%"
               marginX="5%"
-              fontSize="36px"
+              fontSize={{base: "20px",md:"36px"}}
               backgroundColor="#0298DA"
               fontWeight="bold"
-              paddingY="3%"
+              paddingY={{base: "8%", md:"3%"}}
               borderRadius="10px"
               color="white"
               colorScheme="red"
               transition="1s ease-in"
               onClick={handleViewMore}
+              marginY={{base: "5%", md: "0"}}
             >
               View More
             </Button>

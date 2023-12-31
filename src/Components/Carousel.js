@@ -14,6 +14,7 @@ import img2 from "../Assets/Png/project1.png";
 import img3 from "../Assets/Png/project2.png";
 import img4 from "../Assets/Png/project3.png";
 import img5 from "../Assets/Png/project4.png";
+import { useMediaQuery } from "@chakra-ui/react";
 
 const projects = [
   {
@@ -124,6 +125,8 @@ const projects = [
 ];
 
 const Carousel = () => {
+  const [isMobile] = useMediaQuery("(max-width: 768px)");
+
   const [isHovered, setIsHovered] = useState(
     Array(projects.length).fill(false)
   );
@@ -144,7 +147,7 @@ const Carousel = () => {
     <Box marginTop="5%">
       <Box>
         <Text
-          fontSize="64px"
+          fontSize={{ base: "44px", md: "64px" }}
           textAlign="center"
           color="#ED3237"
           fontWeight="700"
@@ -176,8 +179,8 @@ const Carousel = () => {
           {projects.map((project, index) => (
             <Box
               key={index}
-              width="500px"
-              height="400px"
+              width={{ base: "400px", md: "500px" }}
+              height={{ base: "300px", md: "400px" }}
               margin="70px 20px 0"
               padding="5px"
               borderRadius="20px"
@@ -187,11 +190,19 @@ const Carousel = () => {
               boxShadow="0px 10px 10px -5px rgba(0,0,0,0.5)"
               transition="all .3s ease, opacity 2s ease,  top 1s ease"
               _nthChild={{ even: { marginTop: "100px" } }}
-              _hover={{
-                height: "640px",
-                padding: "15px",
-                transform: "translateY(-68px)",
-              }}
+              _hover={
+                isMobile
+                  ? {
+                      height: "540px",
+                      padding: "15px",
+                      transform: "translateY(-68px)",
+                    }
+                  : {
+                      height: "640px",
+                      padding: "15px",
+                      transform: "translateY(-68px)",
+                    }
+              }
               style={{
                 marginTop: index % 2 === 0 ? "0" : "90px",
               }}
@@ -209,16 +220,17 @@ const Carousel = () => {
                   <Image
                     src={project.imgSrc}
                     alt={`Project ${index + 1}`}
-                    width="450px"
-                    height="360px"
+                    width={{ base: "350px", md: "450px" }}
+                    height={{ base: "260px", md: "360px" }}
                   />
                 </Box>
 
                 <Box
-                  fontSize="20px"
+                  fontSize={{ base: "16px", md: "20px" }}
                   fontWeight="600"
                   paddingTop="3%"
                   opacity={isHovered[index] ? 1 : 0}
+                  width={{ base: "80%", md: "100%" }}
                 >
                   <Text
                     backgroundColor="#ED3237"
@@ -229,7 +241,11 @@ const Carousel = () => {
                   >
                     {project.title}
                   </Text>
-                  <Text padding="2% 2%" fontSize="16px">
+                  <Text
+                    width={{ base: "80%", md: "100%" }}
+                    padding="2% 2%"
+                    fontSize={{ base: "14px", md: "16px" }}
+                  >
                     {project.services}
                   </Text>
                   <Button

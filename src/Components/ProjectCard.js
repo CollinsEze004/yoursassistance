@@ -20,7 +20,7 @@ const ProjectCard = ({ date, imageSrc, style, description }) => {
       <Image
         src={imageSrc}
         alt="Project Image"
-        height="570px"
+        height={{base: "400px",md:"570px"}}
         width="680px"
         objectFit="cover"
         boxShadow="0px 10px 10px -5px rgba(0,0,0,0.5)"

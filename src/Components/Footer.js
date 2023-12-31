@@ -18,14 +18,14 @@ const Footer = () => {
       marginY="5%"
       color="#393637"
     >
-      <Flex marginTop="3%">
-        <Box flex="1">
+      <Flex marginTop="3%" flexDirection={{ base: "column", md: "row" }}>
+        <Box flex="1" marginTop={{ base: "10%", md: "0" }}>
           <Image width="80%" src={FlogoB} />
           <Image width="40%" marginTop="10%" src={contactUs} />
           <Button
             borderRadius="10px"
             marginRight="1%"
-            padding="6% 12%"
+            padding={{ base: "8% 10%", md: "6% 12%" }}
             backgroundColor="#0298DA"
             color="white"
             marginTop="-26%"
@@ -41,8 +41,8 @@ const Footer = () => {
             </Text>
 
             <Flex marginTop="3%" alignItems="center">
-              <Image src={email} />
-              <Text>info@yoursassistance.com</Text>
+              <Image width={{ base: "10%" }} src={email} />
+              <Text fontSize="14px">info@yoursassistance.com</Text>
             </Flex>
             <Flex marginLeft="-0.5%" marginTop="3%" alignItems="center">
               <Image src={address} />
@@ -50,7 +50,11 @@ const Footer = () => {
             </Flex>
 
             <Flex marginTop="3%" alignItems="center">
-              <Image width="6.5%" marginRight="2%" src={facebook} />
+              <Image
+                width={{ base: "10%", md: "6.5%" }}
+                marginRight="2%"
+                src={facebook}
+              />
               <Image marginX="2%" src={instagram} />
               <Image marginX="2%" src={twitter} />
               <Image marginX="2%" src={snapchat} />
@@ -61,7 +65,10 @@ const Footer = () => {
         </Box>
 
         <Box flex="1">
-          <Flex justifyContent="center" marginTop="2%">
+          <Flex
+            justifyContent={{ base: "flex-start", md: "center" }}
+            marginTop={{ base: "10%", md: "2%" }}
+          >
             <Box>
               <Text fontSize="20px" fontWeight="700" color="#0298DA">
                 Company
@@ -82,8 +89,16 @@ const Footer = () => {
           </Flex>
         </Box>
 
-        <Box flex="1" textAlign="right">
-          <Text fontSize="48px" fontWeight="bold" color="#0298DA">
+        <Box
+          flex="1"
+          textAlign={{ base: "left", md: "right" }}
+          marginTop={{ base: "10%", md: "0" }}
+        >
+          <Text
+            fontSize={{ base: "32px", md: "48px" }}
+            fontWeight="bold"
+            color="#0298DA"
+          >
             Newsletter
           </Text>
           <Text fontSize="24px" fontWeight="600">

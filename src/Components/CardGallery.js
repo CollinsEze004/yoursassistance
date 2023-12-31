@@ -38,10 +38,10 @@ const Card = ({ dataImage, children }) => {
   };
 
   const cardStyle = {
-    transform: `rotateY(${calculateRotation(mouseX, width)}deg) rotateX(${calculateRotation(
-      mouseY,
-      height
-    )}deg)`,
+    transform: `rotateY(${calculateRotation(
+      mouseX,
+      width
+    )}deg) rotateX(${calculateRotation(mouseY, height)}deg)`,
   };
 
   const cardBgTransform = {

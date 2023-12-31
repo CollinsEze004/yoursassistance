@@ -53,8 +53,8 @@ const ServiceFlex = () => {
   };
 
   return (
-    <Box marginTop="5%">
-      <Flex flexDirection="column" paddingX="5%">
+    <Box marginTop={{ base: "15%", md: "5%" }}>
+      <Flex flexDirection="column" paddingX={{ base: "2%", md: "5%" }}>
         {click ? (
           <Flex
             alignItems="center"
@@ -62,6 +62,7 @@ const ServiceFlex = () => {
               transition: "all 3s ease-in",
               transform: "translateX(0%)",
             }}
+            flexDirection={{ base: "column", md: "row" }}
           >
             <Flex
               flex="0.3"
@@ -70,7 +71,7 @@ const ServiceFlex = () => {
               backgroundColor="#ED3237"
               padding="1.5% 3%"
               textAlign="center"
-              borderRadius="10px 0 0 10px"
+              borderRadius={{ base: "10px 10px 0 0", md: "10px 0 0 10px" }}
               boxShadow="0 4px 18px rgba(0, 0, 0, 0.3)"
               onClick={handleClick}
               cursor="pointer"
@@ -129,14 +130,13 @@ const ServiceFlex = () => {
             <Flex borderRadius="20px" justifyContent="flex-end">
               <Image
                 boxShadow="0 4px 18px rgba(0, 0, 0, 0.3)"
-                width="80%"
+                width={{ base: "100%", md: "80%" }}
                 borderRadius="20px"
                 src={service1}
               />
             </Flex>
             <Box
               padding="1% 2%"
-              fontSize="16px"
               fontWeight="600"
               color="white"
               backgroundColor="#0298DA"
@@ -144,8 +144,9 @@ const ServiceFlex = () => {
               boxShadow="0 4px 8px rgba(0, 0, 0, 0.1)"
               cursor="pointer"
               onClick={handleClick}
+              width={{ base: "50%", md: "fit-content" }}
             >
-              <Text>CLick to View</Text>
+              <Text fontSize={{ base: "14px", md: "16px" }}>CLick to View</Text>
             </Box>
           </Flex>
         )}
@@ -153,12 +154,12 @@ const ServiceFlex = () => {
         {click2 ? (
           <Flex
             alignItems="center"
-            flexDirection="row-reverse"
+            flexDirection={{ base: "column", md: "row-reverse" }}
             style={{
               transition: "all 3s ease-in",
               transform: "translateX(0%)",
             }}
-            marginTop="5%"
+            marginTop={{ base: "10%", md: "5%" }}
           >
             <Flex
               flex="0.3"
@@ -167,7 +168,7 @@ const ServiceFlex = () => {
               backgroundColor="#ED3237"
               padding="1.5% 3%"
               textAlign="center"
-              borderRadius="0 10px 10px 0"
+              borderRadius={{ base: "10px 10px 0 0", md: "0 10px 10px 0" }}
               boxShadow="0 4px 18px rgba(0, 0, 0, 0.3)"
               onClick={handleClick2}
               cursor="pointer"
@@ -219,7 +220,7 @@ const ServiceFlex = () => {
         ) : (
           <Flex
             alignItems="center"
-            marginTop="5%"
+            marginTop={{ base: "10%", md: "5%" }}
             flexDirection="row-reverse"
             style={{
               transition: "all 3s ease-in-out",
@@ -229,14 +230,13 @@ const ServiceFlex = () => {
             <Flex borderRadius="20px">
               <Image
                 boxShadow="0 4px 18px rgba(0, 0, 0, 0.3)"
-                width="80%"
+                width={{ base: "100%", md: "80%" }}
                 borderRadius="20px"
                 src={service2}
               />
             </Flex>
             <Box
               padding="1% 2%"
-              fontSize="16px"
               fontWeight="600"
               color="white"
               backgroundColor="#0298DA"
@@ -244,8 +244,9 @@ const ServiceFlex = () => {
               boxShadow="0 4px 8px rgba(0, 0, 0, 0.1)"
               cursor="pointer"
               onClick={handleClick2}
+              width={{ base: "50%", md: "fit-content" }}
             >
-              <Text>CLick to View</Text>
+              <Text fontSize={{ base: "14px", md: "16px" }}>CLick to View</Text>
             </Box>
           </Flex>
         )}
@@ -257,7 +258,8 @@ const ServiceFlex = () => {
               transition: "all 3s ease-in",
               transform: "translateX(0%)",
             }}
-            marginTop="5%"
+            marginTop={{ base: "10%", md: "5%" }}
+            flexDirection={{ base: "column", md: "row" }}
           >
             <Flex
               flex="0.3"
@@ -266,7 +268,7 @@ const ServiceFlex = () => {
               backgroundColor="#ED3237"
               padding="1.5% 3%"
               textAlign="center"
-              borderRadius="10px 0 0 10px"
+              borderRadius={{ base: "10px 10px 0 0", md: "10px 0 0 10px" }}
               boxShadow="0 4px 18px rgba(0, 0, 0, 0.3)"
               onClick={handleClick3}
               cursor="pointer"
@@ -322,19 +324,19 @@ const ServiceFlex = () => {
               transition: "all 3s ease-in-out",
               transform: "translateX(-5%)",
             }}
-            marginTop="5%"
+            marginTop={{ base: "10%", md: "5%" }}
           >
             <Flex borderRadius="20px" justifyContent="flex-end">
               <Image
                 boxShadow="0 4px 18px rgba(0, 0, 0, 0.3)"
-                width="80%"
+                width={{ base: "100%", md: "80%" }}
                 borderRadius="20px"
                 src={service3}
               />
             </Flex>
             <Box
               padding="1% 2%"
-              fontSize="16px"
+              fontSize={{ base: "14px", md: "16px" }}
               fontWeight="600"
               color="white"
               backgroundColor="#0298DA"
@@ -342,6 +344,7 @@ const ServiceFlex = () => {
               boxShadow="0 4px 8px rgba(0, 0, 0, 0.1)"
               cursor="pointer"
               onClick={handleClick3}
+              width={{ base: "50%", md: "fit-content" }}
             >
               <Text>CLick to View</Text>
             </Box>
@@ -351,12 +354,12 @@ const ServiceFlex = () => {
         {click4 ? (
           <Flex
             alignItems="center"
-            flexDirection="row-reverse"
+            flexDirection={{ base: "column", md: "row-reverse" }}
             style={{
               transition: "all 3s ease-in",
               transform: "translateX(0%)",
             }}
-            marginTop="5%"
+            marginTop={{ base: "10%", md: "5%" }}
           >
             <Flex
               flex="0.3"
@@ -365,7 +368,7 @@ const ServiceFlex = () => {
               backgroundColor="#ED3237"
               padding="1.5% 3%"
               textAlign="center"
-              borderRadius="0 10px 10px 0"
+              borderRadius={{ base: "10px 10px 0 0", md: "0 10px 10px 0" }}
               boxShadow="0 4px 18px rgba(0, 0, 0, 0.3)"
               onClick={handleClick4}
               cursor="pointer"
@@ -417,7 +420,7 @@ const ServiceFlex = () => {
         ) : (
           <Flex
             alignItems="center"
-            marginTop="5%"
+            marginTop={{ base: "10%", md: "5%" }}
             flexDirection="row-reverse"
             style={{
               transition: "all 3s ease-in-out",
@@ -427,14 +430,14 @@ const ServiceFlex = () => {
             <Flex borderRadius="20px">
               <Image
                 boxShadow="0 4px 18px rgba(0, 0, 0, 0.3)"
-                width="80%"
+                width={{ base: "100%", md: "80%" }}
                 borderRadius="20px"
                 src={service4}
               />
             </Flex>
             <Box
               padding="1% 2%"
-              fontSize="16px"
+              fontSize={{ base: "14px", md: "16px" }}
               fontWeight="600"
               color="white"
               backgroundColor="#0298DA"
@@ -442,6 +445,7 @@ const ServiceFlex = () => {
               boxShadow="0 4px 8px rgba(0, 0, 0, 0.1)"
               cursor="pointer"
               onClick={handleClick4}
+              width={{ base: "50%", md: "fit-content" }}
             >
               <Text>CLick to View</Text>
             </Box>
@@ -455,7 +459,8 @@ const ServiceFlex = () => {
               transition: "all 3s ease-in",
               transform: "translateX(0%)",
             }}
-            marginTop="5%"
+            marginTop={{ base: "10%", md: "5%" }}
+            flexDirection={{ base: "column", md: "row" }}
           >
             <Flex
               flex="0.3"
@@ -464,7 +469,7 @@ const ServiceFlex = () => {
               backgroundColor="#ED3237"
               padding="1.5% 3%"
               textAlign="center"
-              borderRadius="10px 0 0 10px"
+              borderRadius={{ base: "10px 10px 0 0", md: "10px 0 0 10px" }}
               boxShadow="0 4px 18px rgba(0, 0, 0, 0.3)"
               onClick={handleClick5}
               cursor="pointer"
@@ -520,19 +525,19 @@ const ServiceFlex = () => {
               transition: "all 3s ease-in-out",
               transform: "translateX(-5%)",
             }}
-            marginTop="5%"
+            marginTop={{ base: "10%", md: "5%" }}
           >
             <Flex borderRadius="20px" justifyContent="flex-end">
               <Image
                 boxShadow="0 4px 18px rgba(0, 0, 0, 0.3)"
-                width="80%"
+                width={{ base: "100%", md: "80%" }}
                 borderRadius="20px"
                 src={service5}
               />
             </Flex>
             <Box
               padding="1% 2%"
-              fontSize="16px"
+              fontSize={{ base: "14px", md: "16px" }}
               fontWeight="600"
               color="white"
               backgroundColor="#0298DA"
@@ -540,6 +545,7 @@ const ServiceFlex = () => {
               boxShadow="0 4px 8px rgba(0, 0, 0, 0.1)"
               cursor="pointer"
               onClick={handleClick5}
+              width={{ base: "50%", md: "fit-content" }}
             >
               <Text>CLick to View</Text>
             </Box>
@@ -549,12 +555,12 @@ const ServiceFlex = () => {
         {click6 ? (
           <Flex
             alignItems="center"
-            flexDirection="row-reverse"
+            flexDirection={{ base: "column", md: "row-reverse" }}
             style={{
               transition: "all 3s ease-in",
               transform: "translateX(0%)",
             }}
-            marginTop="5%"
+            marginTop={{ base: "10%", md: "5%" }}
           >
             <Flex
               flex="0.3"
@@ -563,7 +569,7 @@ const ServiceFlex = () => {
               backgroundColor="#ED3237"
               padding="1.5% 3%"
               textAlign="center"
-              borderRadius="0 10px 10px 0"
+              borderRadius={{ base: "10px 10px 0 0", md: "0 10px 10px 0" }}
               boxShadow="0 4px 18px rgba(0, 0, 0, 0.3)"
               onClick={handleClick6}
               cursor="pointer"
@@ -616,7 +622,7 @@ const ServiceFlex = () => {
         ) : (
           <Flex
             alignItems="center"
-            marginTop="5%"
+            marginTop={{ base: "10%", md: "5%" }}
             flexDirection="row-reverse"
             style={{
               transition: "all 3s ease-in-out",
@@ -626,14 +632,14 @@ const ServiceFlex = () => {
             <Flex borderRadius="20px">
               <Image
                 boxShadow="0 4px 18px rgba(0, 0, 0, 0.3)"
-                width="80%"
+                width={{ base: "100%", md: "80%" }}
                 borderRadius="20px"
                 src={service6}
               />
             </Flex>
             <Box
               padding="1% 2%"
-              fontSize="16px"
+              fontSize={{ base: "14px", md: "16px" }}
               fontWeight="600"
               color="white"
               backgroundColor="#0298DA"
@@ -641,6 +647,7 @@ const ServiceFlex = () => {
               boxShadow="0 4px 8px rgba(0, 0, 0, 0.1)"
               cursor="pointer"
               onClick={handleClick6}
+              width={{ base: "50%", md: "fit-content" }}
             >
               <Text>CLick to View</Text>
             </Box>
@@ -654,7 +661,8 @@ const ServiceFlex = () => {
               transition: "all 3s ease-in",
               transform: "translateX(0%)",
             }}
-            marginTop="5%"
+            marginTop={{ base: "10%", md: "5%" }}
+            flexDirection={{ base: "column", md: "row" }}
           >
             <Flex
               flex="0.3"
@@ -663,7 +671,7 @@ const ServiceFlex = () => {
               backgroundColor="#ED3237"
               padding="1.5% 3%"
               textAlign="center"
-              borderRadius="10px 0 0 10px"
+              borderRadius={{ base: "10px 10px 0 0", md: "10px 0 0 10px" }}
               boxShadow="0 4px 18px rgba(0, 0, 0, 0.3)"
               onClick={handleClick7}
               cursor="pointer"
@@ -719,19 +727,19 @@ const ServiceFlex = () => {
               transition: "all 3s ease-in-out",
               transform: "translateX(-5%)",
             }}
-            marginTop="5%"
+            marginTop={{ base: "10%", md: "5%" }}
           >
             <Flex borderRadius="20px" justifyContent="flex-end">
               <Image
                 boxShadow="0 4px 18px rgba(0, 0, 0, 0.3)"
-                width="80%"
+                width={{ base: "100%", md: "80%" }}
                 borderRadius="20px"
                 src={service7}
               />
             </Flex>
             <Box
               padding="1% 2%"
-              fontSize="16px"
+              fontSize={{ base: "14px", md: "16px" }}
               fontWeight="600"
               color="white"
               backgroundColor="#0298DA"
@@ -739,6 +747,7 @@ const ServiceFlex = () => {
               boxShadow="0 4px 8px rgba(0, 0, 0, 0.1)"
               cursor="pointer"
               onClick={handleClick7}
+              width={{ base: "50%", md: "fit-content" }}
             >
               <Text>CLick to View</Text>
             </Box>

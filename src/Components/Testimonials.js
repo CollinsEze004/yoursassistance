@@ -8,18 +8,19 @@ const Testimonials = () => {
   return (
     <Box>
       <Flex
-        marginX="12%"
+        marginX={{base: "5%",md:"12%"}}
         marginY="5%"
         border="1px solid #0298DA"
         borderRadius="20px"
         padding="5% 7%"
         alignItems="center"
+        flexDirection={{base: 'column', md : 'row'}}
       >
         <Box flex="1" marginRight="3%">
           <Image src={img} />
         </Box>
         <Box flex="1.5">
-          <Text fontWeight="600">
+          <Text fontSize={{base: "14px", md: "16px"}} marginTop={{base: "5%", md: "0"}} fontWeight="600">
             Korem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
             vulputate libero et velit interdum, ac aliquet odio mattis. Class
             aptent taciti sociosqu ad litora torquent per conubia nostra, per
@@ -40,13 +41,13 @@ const Testimonials = () => {
         </Box>
       </Flex>
 
-      <Flex justifyContent="center">
+      <Flex marginTop={{base: "10%", md: "2%"}} justifyContent="center">
         <Image src={left} />
         <Image src={right} />
       </Flex>
 
-      <Flex justifyContent="center" marginTop="5%">
-        <Image src={pageCover} />
+      <Flex justifyContent="center" marginBottom={{base: "15%", md: "0"}} marginTop={{base: "10%", md: "5%"}}>
+        <Image width={{base: "90%", md: "100%"}} src={pageCover} />
       </Flex>
     </Box>
   );

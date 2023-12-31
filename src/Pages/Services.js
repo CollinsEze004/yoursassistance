@@ -20,9 +20,13 @@ const Services = () => {
     <Box>
       <Box marginX="5%" color="#393637">
         <Header />
-        <Flex marginTop="10%">
+        <Flex marginTop="10%" flexDirection={{ base: "column", md: "row" }}>
           <Box flex="1">
-            <Text fontSize="64px" fontWeight="800" color="#0298DA">
+            <Text
+              fontSize={{ base: "56px", md: "64px" }}
+              fontWeight="800"
+              color="#0298DA"
+            >
               THE WAY WE WORK
             </Text>
           </Box>
@@ -37,14 +41,18 @@ const Services = () => {
         </Flex>
 
         <Flex
-          marginX="20%"
+          marginX={{ base: "0%", md: "20%" }}
           alignItems="center"
           justifyContent="center"
           marginTop="5%"
         >
-          <Box flex="1">
+          <Box
+            marginRight={{ base: "5%", md: "0" }}
+            textAlign="center"
+            flex="1"
+          >
             <Button
-              padding="2% 25%"
+              padding={{ base: "2% 20%", md: "2% 25%" }}
               backgroundColor={
                 isButtonSelected("Discover") ? "#0298DA" : "white"
               }
@@ -52,47 +60,60 @@ const Services = () => {
               border="1px solid #0298DA"
               borderRadius="30px"
               onClick={() => handleClick("Discover")}
+              fontSize={{ base: "14px", md: "16px" }}
             >
               Discover
             </Button>
           </Box>
 
-          <Box flex="1">
+          <Box
+            marginRight={{ base: "2%", md: "0" }}
+            textAlign="center"
+            flex="1"
+          >
             <Button
               backgroundColor={isButtonSelected("Define") ? "#0298DA" : "white"}
               borderRadius="30px"
-              padding="2% 25%"
+              padding={{ base: "2% 20%", md: "2% 25%" }}
               color={isButtonSelected("Define") ? "white" : "#0298DA"}
               onClick={() => handleClick("Define")}
               border="1px solid #0298DA"
+              fontSize={{ base: "14px", md: "16px" }}
             >
               Define
             </Button>
           </Box>
 
-          <Box color="white" flex="1">
+          <Box
+            marginRight={{ base: "2%", md: "0" }}
+            textAlign="center"
+            color="white"
+            flex="1"
+          >
             <Button
               backgroundColor={isButtonSelected("Build") ? "#0298DA" : "white"}
               color={isButtonSelected("Build") ? "white" : "#0298DA"}
               borderRadius="30px"
-              padding="2% 25%"
+              padding={{ base: "2% 20%", md: "2% 25%" }}
               onClick={() => handleClick("Build")}
               border="1px solid #0298DA"
+              fontSize={{ base: "14px", md: "16px" }}
             >
               Build
             </Button>
           </Box>
 
-          <Box color="white" flex="1">
+          <Box textAlign="center" color="white" flex="1">
             <Button
               backgroundColor={
                 isButtonSelected("Deliver") ? "#0298DA" : "white"
               }
               borderRadius="30px"
-              padding="2% 25%"
+              padding={{ base: "2% 20%", md: "2% 25%" }}
               onClick={() => handleClick("Deliver")}
               border="1px solid #0298DA"
               color={isButtonSelected("Deliver") ? "white" : "#0298DA"}
+              fontSize={{ base: "14px", md: "16px" }}
             >
               Deliver
             </Button>
@@ -101,7 +122,7 @@ const Services = () => {
 
         <Box>
           <Flex
-            marginTop="5%"
+            marginTop={{base: "15%", md: "5%"}}
             paddingBottom="2%"
             borderBottom="1px solid #ED3237"
           >
@@ -109,12 +130,16 @@ const Services = () => {
               <Text fontSize="14px" color="#0298DA" fontWeight="700">
                 01
               </Text>
-              <Text fontSize="32px" color="#0298DA" fontWeight="700">
+              <Text
+                fontSize={{ base: "24px", md: "32px" }}
+                color="#0298DA"
+                fontWeight="700"
+              >
                 Brand Audit
               </Text>
             </Box>
             <Box flex="2">
-              <Text>
+              <Text fontSize={{ base: "14px", md: "16px" }}>
                 Brand Audit service goes beyond the surface, delving deep into
                 the heart of your brand to uncover its essence. Through
                 meticulous analysis, we identify strengths, refine weaknesses,
@@ -129,12 +154,17 @@ const Services = () => {
               <Text fontSize="14px" color="#0298DA" fontWeight="700">
                 02
               </Text>
-              <Text fontSize="32px" color="#0298DA" fontWeight="700">
+              <Text
+                fontSize={{ base: "24px", md: "32px" }}
+                
+                color="#0298DA"
+                fontWeight="700"
+              >
                 Audience Analysis
               </Text>
             </Box>
             <Box flex="2">
-              <Text>
+              <Text fontSize={{ base: "14px", md: "16px" }}>
                 We understand that reaching the right audience is crucial. Our
                 Audience Analysis service goes beyond demographics, delving into
                 the intricacies of behavior and preferences. With insightful
@@ -144,13 +174,13 @@ const Services = () => {
             </Box>
           </Flex>
 
-          <Box textAlign="center" marginTop="2%">
+          <Box textAlign="center" marginTop={{base: "6%", md: "2%"}}>
             <Button
               colorScheme="red"
               transition="1s ease-in"
               backgroundColor="#0298DA"
               color="white"
-              padding="2% 5%"
+              padding={{base: "8% 10%",md:"2% 5%"}}
             >
               Contact us
             </Button>

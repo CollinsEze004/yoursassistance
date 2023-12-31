@@ -64,9 +64,25 @@ p + p {
   overflow: hidden;
   border-radius: 40px;
   margin: 5% 0;
-  /* box-shadow: rgba(0, 0, 0, 0.66) 0 30px 60px 0, inset #0298DA 0 0 0 5px,
-    inset rgba(255, 255, 255, 0.5) 0 0 0 6px; */
+  box-shadow: rgba(0, 0, 0, 0.1) 0 30px 60px 0, inset #0298DA 0 0 0 2px,
+    inset rgba(255, 255, 255, 0.5) 0 0 0 6px;
   transition: 1s var(--returnEasing);
+}
+
+@media (max-width: 768px) {
+  .card {
+    position: relative;
+    flex: 0 0 240px;
+    width: 380px;
+    height: 380px;
+    background-color: #fff;
+    overflow: hidden;
+    border-radius: 40px;
+    margin: 5% 0;
+    /* box-shadow: rgba(0, 0, 0, 0.66) 0 30px 60px 0, inset #0298DA 0 0 0 5px,
+      inset rgba(255, 255, 255, 0.5) 0 0 0 6px; */
+    transition: 1s var(--returnEasing);
+  }
 }
 
 .card-bg {
