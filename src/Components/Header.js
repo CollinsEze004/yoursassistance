@@ -61,7 +61,6 @@ const NavLinkWithLine = ({ to, children }) => {
 };
 
 const Header = () => {
-  const [activeLink, setActiveLink] = useState("");
   const [isSticky, setIsSticky] = useState(false);
   const [visibleMenu, setVisibleMenu] = useState(null);
   const [isMobile] = useMediaQuery("(max-width: 768px)");
@@ -96,7 +95,7 @@ const Header = () => {
   return (
     <Box>
       {isMobile ? (
-        <Flex padding="3%">
+        <Flex padding="3% 0">
           <Image width="50%" src={logoM} />
           <Spacer />
 
@@ -139,7 +138,7 @@ const Header = () => {
         </Flex>
       ) : (
         <Flex
-          className={`sticky-header-container ${isSticky ? "sticky" : ""}`}
+          className={`sticky-header-container ${isSticky ? "stickyy" : ""}`}
           paddingTop="1%"
           alignItems="center"
         >

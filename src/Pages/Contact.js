@@ -6,7 +6,6 @@ import {
   Text,
   Input,
   AlertDialog,
-  Textarea,
   AlertDialogOverlay,
   AlertDialogContent,
   AlertDialogHeader,

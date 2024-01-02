@@ -97,10 +97,17 @@ const ServiceFlex = () => {
               flex="5"
               height="100%"
             >
-              <Text fontSize="32px" fontWeight="700" color="#0298DA">
+              <Text
+                fontSize={{ base: "24px", md: "32px" }}
+                fontWeight="700"
+                color="#0298DA"
+              >
                 Graphics Design
               </Text>
-              <Text>
+              <Text
+                fontSize={{ base: "14px", md: "16px" }}
+                fontWeight={{ base: "400", md: "500" }}
+              >
                 Unleash the power of visual storytelling with our graphic design
                 expertise. From eye-catching logos to stunning marketing
                 materials, we turn your ideas into captivating visuals that
@@ -109,11 +116,12 @@ const ServiceFlex = () => {
               <Button
                 backgroundColor="#0298DA"
                 border="1px solid #0298DA"
-                padding="5% 5%"
+                padding={{ base: "8% 5%", md: "5% 5%" }}
                 borderRadius="10px"
                 marginTop="2%"
                 marginY="4%"
                 color="white"
+                fontSize={{ base: "14px", md: "16px" }}
               >
                 Click to view
               </Button>
@@ -194,10 +202,17 @@ const ServiceFlex = () => {
               flex="5"
               height="100%"
             >
-              <Text fontSize="32px" fontWeight="700" color="#0298DA">
+              <Text
+                fontSize={{ base: "24px", md: "32px" }}
+                fontWeight="700"
+                color="#0298DA"
+              >
                 Branding & Brand identity design
               </Text>
-              <Text>
+              <Text
+                fontSize={{ base: "14px", md: "16px" }}
+                fontWeight={{ base: "400", md: "500" }}
+              >
                 Crafting compelling narratives and visually defining your
                 essence, our branding and brand identity design services ensure
                 your business stands out in a crowded market. Let us create a
@@ -207,11 +222,12 @@ const ServiceFlex = () => {
               <Button
                 backgroundColor="#0298DA"
                 border="1px solid #0298DA"
-                padding="5% 5%"
+                padding={{ base: "8% 5%", md: "5% 5%" }}
                 borderRadius="10px"
                 marginTop="2%"
                 marginY="4%"
                 color="white"
+                fontSize={{ base: "14px", md: "16px" }}
               >
                 Contact us
               </Button>
@@ -294,10 +310,17 @@ const ServiceFlex = () => {
               flex="5"
               height="100%"
             >
-              <Text fontSize="32px" fontWeight="700" color="#0298DA">
+              <Text
+                fontSize={{ base: "24px", md: "32px" }}
+                fontWeight="700"
+                color="#0298DA"
+              >
                 Web Development
               </Text>
-              <Text>
+              <Text
+                fontSize={{ base: "14px", md: "16px" }}
+                fontWeight={{ base: "400", md: "500" }}
+              >
                 Transform your digital aspirations into reality with our web
                 development expertise. From seamless user experiences to
                 cutting-edge functionality, we bring your online presence to
@@ -307,11 +330,12 @@ const ServiceFlex = () => {
               <Button
                 backgroundColor="#0298DA"
                 border="1px solid #0298DA"
-                padding="5% 5%"
+                padding={{ base: "8% 5%", md: "5% 5%" }}
                 borderRadius="10px"
                 marginTop="2%"
                 marginY="4%"
                 color="white"
+                fontSize={{ base: "14px", md: "16px" }}
               >
                 Contact us
               </Button>
@@ -394,10 +418,17 @@ const ServiceFlex = () => {
               flex="5"
               height="100%"
             >
-              <Text fontSize="32px" fontWeight="700" color="#0298DA">
+              <Text
+                fontSize={{ base: "24px", md: "32px" }}
+                fontWeight="700"
+                color="#0298DA"
+              >
                 Digital Marketing
               </Text>
-              <Text>
+              <Text
+                fontSize={{ base: "14px", md: "16px" }}
+                fontWeight={{ base: "400", md: "500" }}
+              >
                 Elevate your online presence and drive success with our digital
                 marketing solutions. From strategic campaigns to engaging
                 content, we specialize in navigating the digital landscape to
@@ -407,11 +438,12 @@ const ServiceFlex = () => {
               <Button
                 backgroundColor="#0298DA"
                 border="1px solid #0298DA"
-                padding="5% 5%"
+                padding={{ base: "8% 5%", md: "5% 5%" }}
                 borderRadius="10px"
                 marginTop="2%"
                 marginY="4%"
                 color="white"
+                fontSize={{ base: "14px", md: "16px" }}
               >
                 Contact us
               </Button>
@@ -495,10 +527,17 @@ const ServiceFlex = () => {
               flex="5"
               height="100%"
             >
-              <Text fontSize="32px" fontWeight="700" color="#0298DA">
+              <Text
+                fontSize={{ base: "24px", md: "32px" }}
+                fontWeight="700"
+                color="#0298DA"
+              >
                 Content Management
               </Text>
-              <Text>
+              <Text
+                fontSize={{ base: "14px", md: "16px" }}
+                fontWeight={{ base: "400", md: "500" }}
+              >
                 Simplify, organize, and amplify your digital presence with our
                 content management solutions. We empower you to take control,
                 seamlessly managing and updating your content, ensuring that
@@ -508,11 +547,12 @@ const ServiceFlex = () => {
               <Button
                 backgroundColor="#0298DA"
                 border="1px solid #0298DA"
-                padding="5% 5%"
+                padding={{ base: "8% 5%", md: "5% 5%" }}
                 borderRadius="10px"
                 marginTop="2%"
                 marginY="4%"
                 color="white"
+                fontSize={{ base: "14px", md: "16px" }}
               >
                 Contact us
               </Button>
@@ -595,10 +635,17 @@ const ServiceFlex = () => {
               flex="5"
               height="100%"
             >
-              <Text fontSize="32px" fontWeight="700" color="#0298DA">
+              <Text
+                fontSize={{ base: "24px", md: "32px" }}
+                fontWeight="700"
+                color="#0298DA"
+              >
                 Content Design
               </Text>
-              <Text>
+              <Text
+                fontSize={{ base: "14px", md: "16px" }}
+                fontWeight={{ base: "400", md: "500" }}
+              >
                 Crafting compelling narratives and visual experiences, our
                 content design services seamlessly blend creativity with
                 strategy. From captivating copy to visually engaging assets, we
@@ -609,11 +656,12 @@ const ServiceFlex = () => {
               <Button
                 backgroundColor="#0298DA"
                 border="1px solid #0298DA"
-                padding="5% 5%"
+                padding={{ base: "8% 5%", md: "5% 5%" }}
                 borderRadius="10px"
                 marginTop="2%"
                 marginY="4%"
                 color="white"
+                fontSize={{ base: "14px", md: "16px" }}
               >
                 Contact us
               </Button>
@@ -697,10 +745,17 @@ const ServiceFlex = () => {
               flex="5"
               height="100%"
             >
-              <Text fontSize="32px" fontWeight="700" color="#0298DA">
+              <Text
+                fontSize={{ base: "24px", md: "32px" }}
+                fontWeight="700"
+                color="#0298DA"
+              >
                 Animations
               </Text>
-              <Text>
+              <Text
+                fontSize={{ base: "14px", md: "16px" }}
+                fontWeight={{ base: "400", md: "500" }}
+              >
                 Bring your brand to life with our dynamic animation services.
                 From attention-grabbing motion graphics to immersive
                 storytelling, we add a touch of magic to your content, creating
@@ -710,11 +765,12 @@ const ServiceFlex = () => {
               <Button
                 backgroundColor="#0298DA"
                 border="1px solid #0298DA"
-                padding="5% 5%"
+                padding={{ base: "8% 5%", md: "5% 5%" }}
                 borderRadius="10px"
                 marginTop="2%"
                 marginY="4%"
                 color="white"
+                fontSize={{ base: "14px", md: "16px" }}
               >
                 Contact us
               </Button>
@@ -728,6 +784,7 @@ const ServiceFlex = () => {
               transform: "translateX(-5%)",
             }}
             marginTop={{ base: "10%", md: "5%" }}
+            marginBottom={{ base: "5%", md: "5%" }}
           >
             <Flex borderRadius="20px" justifyContent="flex-end">
               <Image

@@ -18,9 +18,12 @@ const Footer = () => {
       marginY="5%"
       color="#393637"
     >
-      <Flex marginTop="3%" flexDirection={{ base: "column", md: "row" }}>
+      <Flex
+        marginTop={{ base: "0", md: "3%" }}
+        flexDirection={{ base: "column", md: "row" }}
+      >
         <Box flex="1" marginTop={{ base: "10%", md: "0" }}>
-          <Image width="80%" src={FlogoB} />
+          <Image width={{ base: "60%", md: "80%" }} src={FlogoB} />
           <Image width="40%" marginTop="10%" src={contactUs} />
           <Button
             borderRadius="10px"
@@ -41,25 +44,45 @@ const Footer = () => {
             </Text>
 
             <Flex marginTop="3%" alignItems="center">
-              <Image width={{ base: "10%" }} src={email} />
-              <Text fontSize="14px">info@yoursassistance.com</Text>
+              <Image width={{ base: "7%", md: "5%" }} src={email} />
+              <Text marginLeft="2%" fontSize="14px">
+                info@yoursassistance.com
+              </Text>
             </Flex>
             <Flex marginLeft="-0.5%" marginTop="3%" alignItems="center">
-              <Image src={address} />
-              <Text>32/37 Witheren Circuit, Pacific Pines, QLD 4211</Text>
+              <Image width={{ base: "8%", md: "5%" }} src={address} />
+              <Text marginLeft="1%" fontSize="14px">
+                32/37 Witheren Circuit, Pacific Pines, QLD 4211
+              </Text>
             </Flex>
 
             <Flex marginTop="3%" alignItems="center">
               <Image
-                width={{ base: "10%", md: "6.5%" }}
+                width={{ base: "8%", md: "6.5%" }}
                 marginRight="2%"
                 src={facebook}
               />
-              <Image marginX="2%" src={instagram} />
-              <Image marginX="2%" src={twitter} />
-              <Image marginX="2%" src={snapchat} />
-              <Image marginX="2%" src={tiktok} />
-              <Image src={linkedin} />
+              <Image
+                width={{ base: "7%", md: "5%" }}
+                marginX="2%"
+                src={instagram}
+              />
+              <Image
+                width={{ base: "7%", md: "5%" }}
+                marginX="2%"
+                src={twitter}
+              />
+              <Image
+                width={{ base: "7%", md: "5%" }}
+                marginX="2%"
+                src={snapchat}
+              />
+              <Image
+                width={{ base: "7%", md: "5%" }}
+                marginX="2%"
+                src={tiktok}
+              />
+              <Image width={{ base: "7%", md: "5%" }} src={linkedin} />
             </Flex>
           </Box>
         </Box>
@@ -73,18 +96,18 @@ const Footer = () => {
               <Text fontSize="20px" fontWeight="700" color="#0298DA">
                 Company
               </Text>
-              <Text>Home</Text>
-              <Text>About</Text>
-              <Text>Privacy Policy</Text>
-              <Text>Terms and Conditions</Text>
+              <Text fontSize="14px">Home</Text>
+              <Text fontSize="14px">About</Text>
+              <Text fontSize="14px">Privacy Policy</Text>
+              <Text fontSize="14px">Terms and Conditions</Text>
             </Box>
 
             <Box>
               <Text fontSize="20px" fontWeight="700" color="#0298DA">
                 Portfolio
               </Text>
-              <Text>Services</Text>
-              <Text>Projects</Text>
+              <Text fontSize="14px">Services</Text>
+              <Text fontSize="14px">Projects</Text>
             </Box>
           </Flex>
         </Box>
@@ -93,26 +116,27 @@ const Footer = () => {
           flex="1"
           textAlign={{ base: "left", md: "right" }}
           marginTop={{ base: "10%", md: "0" }}
+          marginBottom={{ base: "9%", md: "0" }}
         >
           <Text
-            fontSize={{ base: "32px", md: "48px" }}
+            fontSize={{ base: "30px", md: "48px" }}
             fontWeight="bold"
             color="#0298DA"
           >
             Newsletter
           </Text>
-          <Text fontSize="24px" fontWeight="600">
+          <Text fontSize={{ base: "18px", md: "24px" }} fontWeight="600">
             Subscribe to our Newsletter
           </Text>
           <Input
             border="1px solid #393637"
             placeholder="Enter your email"
-            padding="6% 4%"
+            padding={{ base: "7% 4%", md: "6% 4%" }}
             borderRadius="10px"
           />
           <Button
             borderRadius="10px"
-            padding="6% 10%"
+            padding={{ base: "8% 10%", md: "6% 10%" }}
             backgroundColor="#0298DA"
             color="white"
             marginTop="2%"

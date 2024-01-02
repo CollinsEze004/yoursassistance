@@ -14,7 +14,6 @@ import {
 } from "@chakra-ui/react";
 import React, { useState, useEffect } from "react";
 import logo from "../Assets/Svg/logoB.svg";
-import logoM from "../Assets/Svg/logoM.svg";
 import { NavLink, Link } from "react-router-dom";
 import { useMediaQuery } from "@chakra-ui/react";
 import "./HeaderTwo.css";
@@ -61,7 +60,6 @@ const NavLinkWithLine = ({ to, children }) => {
 };
 
 const Header = () => {
-  const [activeLink, setActiveLink] = useState("");
   const [isSticky, setIsSticky] = useState(false);
   const [visibleMenu, setVisibleMenu] = useState(null);
   const [isMobile] = useMediaQuery("(max-width: 768px)");
@@ -93,15 +91,17 @@ const Header = () => {
     };
   }, []);
 
+  // fontSize={{base: "24px",md:"32px"}}
+  
   return (
     <Box>
       {isMobile ? (
-        <Flex padding="3%" marginTop="4%">
+        <Flex padding="3% 0" marginTop="4%">
           <Image width="50%" src={logo} />
           <Spacer />
 
           <Menu>
-            <MenuButton backgroundColor="#0298DA" marginRight="-5%" as={Button}>
+            <MenuButton backgroundColor="#0298DA" as={Button}>
               <Image src={menu} />
             </MenuButton>
             <MenuList height="fit-content" paddingY="5%" color="#002D3A">

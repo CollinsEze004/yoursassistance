@@ -93,7 +93,12 @@ const Card = ({ dataImage, children }) => {
 
 const CardGallery = () => {
   return (
-    <Flex direction="column" align="center" p="4" style={{ perspective: 1000 }}>
+    <Flex
+      direction="column"
+      align="center"
+      p={{ base: "0", md: "4" }}
+      style={{ perspective: 1000 }}
+    >
       <Flex className="container" wrap="wrap" justify="center">
         <Card>
           <Image src={service1} />

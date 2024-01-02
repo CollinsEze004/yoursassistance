@@ -23,7 +23,7 @@ const Services = () => {
         <Flex marginTop="10%" flexDirection={{ base: "column", md: "row" }}>
           <Box flex="1">
             <Text
-              fontSize={{ base: "56px", md: "64px" }}
+              fontSize={{ base: "32px", md: "64px" }}
               fontWeight="800"
               color="#0298DA"
             >
@@ -31,7 +31,7 @@ const Services = () => {
             </Text>
           </Box>
           <Box flex="1">
-            <Text>
+            <Text fontSize={{ base: "14px", md: "16px" }}>
               A digital agency that knows the internet and people in equal
               measure. End users, browsers, audiences, customers. We get them
               because we are them. And because we spend more time online than
@@ -60,7 +60,7 @@ const Services = () => {
               border="1px solid #0298DA"
               borderRadius="30px"
               onClick={() => handleClick("Discover")}
-              fontSize={{ base: "14px", md: "16px" }}
+              fontSize={{ base: "13px", md: "16px" }}
             >
               Discover
             </Button>
@@ -78,7 +78,7 @@ const Services = () => {
               color={isButtonSelected("Define") ? "white" : "#0298DA"}
               onClick={() => handleClick("Define")}
               border="1px solid #0298DA"
-              fontSize={{ base: "14px", md: "16px" }}
+              fontSize={{ base: "13px", md: "16px" }}
             >
               Define
             </Button>
@@ -97,7 +97,7 @@ const Services = () => {
               padding={{ base: "2% 20%", md: "2% 25%" }}
               onClick={() => handleClick("Build")}
               border="1px solid #0298DA"
-              fontSize={{ base: "14px", md: "16px" }}
+              fontSize={{ base: "13px", md: "16px" }}
             >
               Build
             </Button>
@@ -113,7 +113,7 @@ const Services = () => {
               onClick={() => handleClick("Deliver")}
               border="1px solid #0298DA"
               color={isButtonSelected("Deliver") ? "white" : "#0298DA"}
-              fontSize={{ base: "14px", md: "16px" }}
+              fontSize={{ base: "13px", md: "16px" }}
             >
               Deliver
             </Button>
@@ -122,7 +122,7 @@ const Services = () => {
 
         <Box>
           <Flex
-            marginTop={{base: "15%", md: "5%"}}
+            marginTop={{ base: "15%", md: "5%" }}
             paddingBottom="2%"
             borderBottom="1px solid #ED3237"
           >
@@ -131,7 +131,7 @@ const Services = () => {
                 01
               </Text>
               <Text
-                fontSize={{ base: "24px", md: "32px" }}
+                fontSize={{ base: "20px", md: "32px" }}
                 color="#0298DA"
                 fontWeight="700"
               >
@@ -139,7 +139,7 @@ const Services = () => {
               </Text>
             </Box>
             <Box flex="2">
-              <Text fontSize={{ base: "14px", md: "16px" }}>
+              <Text fontSize={{ base: "13px", md: "16px" }}>
                 Brand Audit service goes beyond the surface, delving deep into
                 the heart of your brand to uncover its essence. Through
                 meticulous analysis, we identify strengths, refine weaknesses,
@@ -155,8 +155,7 @@ const Services = () => {
                 02
               </Text>
               <Text
-                fontSize={{ base: "24px", md: "32px" }}
-                
+                fontSize={{ base: "20px", md: "32px" }}
                 color="#0298DA"
                 fontWeight="700"
               >
@@ -164,7 +163,7 @@ const Services = () => {
               </Text>
             </Box>
             <Box flex="2">
-              <Text fontSize={{ base: "14px", md: "16px" }}>
+              <Text fontSize={{ base: "13px", md: "16px" }}>
                 We understand that reaching the right audience is crucial. Our
                 Audience Analysis service goes beyond demographics, delving into
                 the intricacies of behavior and preferences. With insightful
@@ -174,17 +173,27 @@ const Services = () => {
             </Box>
           </Flex>
 
-          <Box textAlign="center" marginTop={{base: "6%", md: "2%"}}>
+          <Box textAlign="center" marginTop={{ base: "6%", md: "2%" }}>
             <Button
               colorScheme="red"
               transition="1s ease-in"
               backgroundColor="#0298DA"
               color="white"
-              padding={{base: "8% 10%",md:"2% 5%"}}
+              padding={{ base: "8% 10%", md: "2% 5%" }}
             >
               Contact us
             </Button>
           </Box>
+        </Box>
+
+        <Box textAlign="center" marginTop="15%" >
+          <Text
+            fontSize={{ base: "28px" }}
+            display={{ base: "block", md: "none" }}
+            fontWeight={{base: "600"}}
+          >
+            Our Services
+          </Text>
         </Box>
 
         <ServiceFlex />

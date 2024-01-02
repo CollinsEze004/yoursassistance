@@ -147,7 +147,7 @@ const Carousel = () => {
     <Box marginTop="5%">
       <Box>
         <Text
-          fontSize={{ base: "44px", md: "64px" }}
+          fontSize={{ base: "32px", md: "64px" }}
           textAlign="center"
           color="#ED3237"
           fontWeight="700"
@@ -155,10 +155,10 @@ const Carousel = () => {
           Projects
         </Text>
       </Box>
-      <Flex p="30px">
+      <Flex p={{base: "5px",md:"30px"}}>
         <Flex
-          height="780px"
-          paddingTop="70px"
+          height={{base: "580px", md:"780px"}}
+          paddingTop="10%"
           overflowX="scroll"
           overflowY="hidden"
           //   mb="30px"
@@ -179,8 +179,8 @@ const Carousel = () => {
           {projects.map((project, index) => (
             <Box
               key={index}
-              width={{ base: "400px", md: "500px" }}
-              height={{ base: "300px", md: "400px" }}
+              width={{ base: "300px", md: "500px" }}
+              height={{ base: "270px", md: "400px" }}
               margin="70px 20px 0"
               padding="5px"
               borderRadius="20px"
@@ -193,7 +193,7 @@ const Carousel = () => {
               _hover={
                 isMobile
                   ? {
-                      height: "540px",
+                      height: "500px",
                       padding: "15px",
                       transform: "translateY(-68px)",
                     }
@@ -220,8 +220,8 @@ const Carousel = () => {
                   <Image
                     src={project.imgSrc}
                     alt={`Project ${index + 1}`}
-                    width={{ base: "350px", md: "450px" }}
-                    height={{ base: "260px", md: "360px" }}
+                    width={{ base: "280px", md: "450px" }}
+                    height={{ base: "230px", md: "360px" }}
                   />
                 </Box>
 
@@ -230,7 +230,7 @@ const Carousel = () => {
                   fontWeight="600"
                   paddingTop="3%"
                   opacity={isHovered[index] ? 1 : 0}
-                  width={{ base: "80%", md: "100%" }}
+                  width={{ base: "60%", md: "100%" }}
                 >
                   <Text
                     backgroundColor="#ED3237"

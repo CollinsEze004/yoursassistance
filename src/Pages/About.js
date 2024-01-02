@@ -34,7 +34,7 @@ const About = () => {
       <Box marginX="5%" color="#393637" fontWeight="600">
         <Box marginTop="2%" width={{ base: "100%", md: "70%" }}>
           <Text
-            fontSize={{ base: "32px", md: "96px" }}
+            fontSize={{ base: "28px", md: "96px" }}
             fontWeight="bold"
             color="#0298DA"
           >
@@ -50,14 +50,14 @@ const About = () => {
           <Box width={{ base: "100%", md: "80%" }} flex="1">
             <Text
               color="#0298DA"
-              fontSize={{ base: "36px", md: "48px" }}
+              fontSize={{ base: "28px", md: "48px" }}
               fontWeight="700"
             >
               Welcome to Yoursassistance
             </Text>
             <Text
               width={{ base: "100", md: "90%" }}
-              fontWeight={{ base: "" }}
+              fontWeight="400"
               fontSize={{ base: "14px", md: "16px" }}
             >
               At Yoursassistance, we are your digital partners, dedicated to
@@ -70,9 +70,13 @@ const About = () => {
             </Text>
           </Box>
 
-          <Box flex="1" marginTop={{ base: "5%", md: "0" }}>
-            <Image src={logoB} />
-          </Box>
+          <Flex
+            justifyContent="center"
+            flex="1"
+            marginTop={{ base: "15%", md: "0" }}
+          >
+            <Image width={{ base: "80%" }} src={logoB} />
+          </Flex>
         </Flex>
 
         <Flex flexDirection="column" marginTop="5%">
@@ -87,12 +91,12 @@ const About = () => {
             <Box flex="1">
               <Text
                 color="#0298DA"
-                fontSize={{ base: "32px", md: "48px" }}
+                fontSize={{ base: "24px", md: "48px" }}
                 fontWeight="700"
               >
                 Our Mission
               </Text>
-              <Text>
+              <Text fontWeight="400" fontSize={{ base: "14px", md: "16px" }}>
                 Our primary mission is to provide businesses and companies with
                 top-notch digital solutions that transcend expectations. We
                 believe in the power of exclusive services to deliver
@@ -114,12 +118,12 @@ const About = () => {
             <Box flex="1">
               <Text
                 color="#0298DA"
-                fontSize={{ base: "32px", md: "48px" }}
+                fontSize={{ base: "24px", md: "48px" }}
                 fontWeight="700"
               >
                 What Sets Us Apart
               </Text>
-              <Text>
+              <Text fontWeight="400" fontSize={{ base: "14px", md: "16px" }}>
                 Yoursassistance stands out in the crowded digital arena by
                 offering more than just services—we provide an experience. Our
                 commitment to excellence is evident in every project we
@@ -141,12 +145,12 @@ const About = () => {
             <Box flex="1">
               <Text
                 color="#0298DA"
-                fontSize={{ base: "32px", md: "48px" }}
+                fontSize={{ base: "24px", md: "48px" }}
                 fontWeight="700"
               >
                 Showcase of Excellence
               </Text>
-              <Text>
+              <Text fontWeight="400" fontSize={{ base: "14px", md: "16px" }}>
                 Explore our portfolio to witness the competence and capability
                 we bring to the table. We showcase a diverse range of projects,
                 each a testament to our dedication to quality and innovation.
@@ -160,6 +164,7 @@ const About = () => {
                 marginTop="3%"
                 colorScheme="red"
                 transition="1s ease-in"
+                fontSize={{ base: "14px", md: "16px" }}
               >
                 Explore Projects
               </Button>
@@ -178,12 +183,16 @@ const About = () => {
             <Box flex="1">
               <Text
                 color="#0298DA"
-                fontSize={{ base: "32px", md: "48px" }}
+                fontSize={{ base: "24px", md: "48px" }}
                 fontWeight="700"
               >
                 Interactive User Experience
               </Text>
-              <Text width="90%">
+              <Text
+                fontWeight="400"
+                fontSize={{ base: "14px", md: "16px" }}
+                width="90%"
+              >
                 At Yoursassistance, we understand the importance of an
                 interactive user experience. Navigating through our website is
                 designed to be intuitive and engaging, mirroring the seamless
@@ -196,6 +205,7 @@ const About = () => {
                 marginTop="3%"
                 colorScheme="red"
                 transition="1s ease-in"
+                fontSize={{ base: "14px", md: "16px" }}
               >
                 Explore Projects
               </Button>
@@ -214,19 +224,19 @@ const About = () => {
             <Box flex="1">
               <Text
                 color="#0298DA"
-                fontSize={{ base: "32px", md: "48px" }}
+                fontSize={{ base: "24px", md: "48px" }}
                 fontWeight="700"
               >
                 Get in Touch
               </Text>
-              <Text>
+              <Text fontWeight="400" fontSize={{ base: "14px", md: "16px" }}>
                 Ready to elevate your digital presence? Whether you're looking
                 for a complete brand overhaul, a stunning website, or a targeted
                 digital marketing strategy, we are here for you. Contact us to
                 explore the possibilities of collaboration, and let's embark on
                 a journey to digital success together.
               </Text>
-              <Text>
+              <Text fontWeight="400" fontSize={{ base: "14px", md: "16px" }}>
                 Remember, it's not just the best products that sell; it's the
                 best-marketed products. From concept to execution,
                 Yoursassistance is here to turn your brand whispers into digital
@@ -239,6 +249,7 @@ const About = () => {
                 marginTop="3%"
                 colorScheme="red"
                 transition="1s ease-in"
+                fontSize={{ base: "14px", md: "16px" }}
               >
                 Contact us
               </Button>
@@ -247,7 +258,11 @@ const About = () => {
         </Flex>
       </Box>
 
-      <Flex justifyContent="center" marginTop="5%" marginX={{base: '5%', md: "0"}}>
+      <Flex
+        justifyContent="center"
+        marginY={{base: "10%",md:"5%"}}
+        marginX={{ base: "5%", md: "0" }}
+      >
         <Image src={pageCover} />
       </Flex>
 

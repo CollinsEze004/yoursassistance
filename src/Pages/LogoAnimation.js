@@ -4,6 +4,7 @@ import { keyframes } from "@emotion/react";
 import logoConstruction from "../Assets/Png/logoConstruction.svg";
 import yoursassistance from "../Assets/Svg/yoursassistance.svg";
 import { TypeAnimation } from "react-type-animation";
+import { useMediaQuery } from "@chakra-ui/react";
 
 const fadeInOut = keyframes`
   0%, 100% {
@@ -23,9 +24,9 @@ const pulsate = keyframes`
   }
 `;
 
-
 const LogoAnimation = ({ onFinish }) => {
   const [showText, setShowText] = useState(false);
+  const [isMobile] = useMediaQuery("(max-width: 768px)");
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -46,40 +47,81 @@ const LogoAnimation = ({ onFinish }) => {
   }, [showText, onFinish]);
 
   return (
-    <Box
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-      height="100vh"
-      backgroundColor="white"
-    >
-      {showText ? (
-        <Flex justifyContent="center" alignItems="center">
-          <Image
-            src={yoursassistance} // Path to the second logo
-            alt="Logo"
-            width="20%" // Adjust the size as needed
-          />
-          <TypeAnimation
-            sequence={["Yoursassistance"]}
-            wrapper="span"
-            speed={30}
-            style={{
-              display: "inline-block",
-              fontWeight: "bold",
-              fontSize: "128px",
-              color: "#0298DA",
-            }}
-            repeat={0}
-          />
-        </Flex>
+    <Box>
+      {isMobile ? (
+        <Box
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          height="100vh"
+          backgroundColor="white"
+        >
+          {showText ? (
+            <Flex justifyContent="center" alignItems="center">
+              <Image
+                src={yoursassistance} // Path to the second logo
+                alt="Logo"
+                width="30%" // Adjust the size as needed
+              />
+              <TypeAnimation
+                sequence={["Yoursassistance"]}
+                wrapper="span"
+                speed={30}
+                style={{
+                  display: "inline-block",
+                  fontWeight: "bold",
+                  fontSize: "28px",
+                  color: "#0298DA",
+                }}
+                repeat={0}
+              />
+            </Flex>
+          ) : (
+            <Image
+              src={logoConstruction} // Path to the first logo
+              alt="Logo"
+              width="40%" // Adjust the size as needed
+              animation={`${fadeInOut} 1.5s ease-in-out, ${pulsate} 1.5s ease-in-out infinite`}
+            />
+          )}
+        </Box>
       ) : (
-        <Image
-          src={logoConstruction} // Path to the first logo
-          alt="Logo"
-          width="20%" // Adjust the size as needed
-          animation={`${fadeInOut} 1.5s ease-in-out, ${pulsate} 1.5s ease-in-out infinite`}
-        />
+        <Box
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          height="100vh"
+          backgroundColor="white"
+        >
+          {showText ? (
+            <Flex justifyContent="center" alignItems="center">
+              <Image
+                src={yoursassistance} // Path to the second logo
+                alt="Logo"
+                width="20%" // Adjust the size as needed
+              />
+              <TypeAnimation
+                sequence={["Yoursassistance"]}
+                wrapper="span"
+                speed={30}
+                style={{
+                  display: "inline-block",
+                  fontWeight: "bold",
+                  fontSize: "128px",
+                  color: "#0298DA",
+                }}
+                repeat={0}
+              />
+            </Flex>
+          ) : (
+            <Image
+              src={logoConstruction} // Path to the first logo
+              alt="Logo"
+              width="20%" // Adjust the size as needed
+              animation={`${fadeInOut} 1.5s ease-in-out, ${pulsate} 1.5s ease-in-out infinite`}
+            />
+          )}
+        </Box>
       )}
     </Box>
   );

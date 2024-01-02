@@ -20,6 +20,7 @@ import brand2 from "../Assets/Png/brandingImg2.png";
 import brand3 from "../Assets/Png/brandingImg3.png";
 import logoB from "../Assets/Svg/logoB.svg";
 import HomeServices from "../Components/HomeServices";
+import pageCover from "../Assets/Svg/pageCover.svg";
 import Carousel from "../Components/Carousel";
 import Testimonials from "../Components/Testimonials";
 import Footer from "../Components/Footer";
@@ -96,7 +97,7 @@ const HomePage = () => {
           marginTop="2%"
           textAlign="center"
           color="#393637"
-          fontSize={{ base: "20px", md: "24px" }}
+          fontSize={{ base: "18px", md: "24px" }}
           fontWeight="600"
         >
           {title}
@@ -116,15 +117,16 @@ const HomePage = () => {
     <Box>
       {isMobile ? (
         <Box
-          width="100%"
+          // width="100%"
           height="626px"
           backgroundImage={backgroundsMobile[backgroundIndexMobile]}
           backgroundRepeat="no-repeat"
           backgroundSize="contain"
           transition="background-image 1s ease-in"
         >
-          <Box height="606px" paddingX="5%" backgroundColor="rgba(0,0,0, 0.4)" color="white">
+          <Box height="606px" paddingX="5%" color="white">
             <Header />
+
             <Flex flexDirection="column" justifyContent="center" height="60vh">
               <Text fontSize="36px" color="white" fontWeight="600">
                 It's not the best product that sells but the best marketed
@@ -169,7 +171,7 @@ const HomePage = () => {
           <Box
             paddingX="5%"
             height="100vh"
-            backgroundColor="rgba(0,0,0, 0.4)"
+            backgroundColor="rgba(0,0,0, 0.6)"
             color="white"
           >
             <Header />
@@ -220,7 +222,7 @@ const HomePage = () => {
         <Box>
           <Text
             color="#0298DA"
-            fontSize={{ base: "36px", md: "82px" }}
+            fontSize={{ base: "32px", md: "82px" }}
             fontWeight="600"
             width={{ base: "90%", md: "50%" }}
           >
@@ -270,6 +272,7 @@ const HomePage = () => {
             marginTop="3%"
             width={{ base: "100%", md: "80%" }}
             textAlign={{ base: "left", md: "center" }}
+            fontSize={{base: "14px", md: "16px"}}
           >
             No two brands are alike, and neither are their challenges. We don't
             believe in cookie-cutter solutions – we work hand-in-hand with each
@@ -280,6 +283,7 @@ const HomePage = () => {
             marginTop="2%"
             width={{ base: "100%", md: "70%" }}
             textAlign={{ base: "left", md: "center" }}
+            fontSize={{base: "14px", md: "16px"}}
           >
             We're not afraid to push boundaries and embrace the latest trends.
             we stay ahead of the curve, ensuring their brand identity remains
@@ -294,6 +298,7 @@ const HomePage = () => {
             colorScheme="red"
             transition="1s ease-in"
             marginTop="3%"
+            fontSize={{base: "14px", md: "16px"}}
           >
             About Us
           </Button>
@@ -303,6 +308,14 @@ const HomePage = () => {
       <ImageGallery />
       <Carousel />
       <Testimonials />
+      <Flex
+        justifyContent="center"
+        marginBottom={{ base: "15%", md: "0" }}
+        marginTop={{ base: "10%", md: "5%" }}
+        marginX="5%"
+      >
+        <Image width={{ base: "100%", md: "100%" }} src={pageCover} />
+      </Flex>
       <Footer />
     </Box>
   );

@@ -20,6 +20,12 @@ p + p {
   justify-content: center;
 }
 
+@media (max-width: 768px) {
+  .container {
+   padding: 0;
+  }
+}
+
 .card-wrap {
   margin: 10px;
   transform: perspective(800px);
@@ -73,8 +79,8 @@ p + p {
   .card {
     position: relative;
     flex: 0 0 240px;
-    width: 380px;
-    height: 380px;
+    width: 350px;
+    height: 350px;
     background-color: #fff;
     overflow: hidden;
     border-radius: 40px;
