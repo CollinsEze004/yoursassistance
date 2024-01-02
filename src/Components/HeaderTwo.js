@@ -126,7 +126,7 @@ const Header = () => {
                   paddingX="20%"
                   fontSize="14px"
                 >
-                  <NavLink to="/book-appointment">Contact us</NavLink>
+                  <NavLink to="/contact-us">Contact us</NavLink>
                 </Button>
               </Box>
             </MenuList>

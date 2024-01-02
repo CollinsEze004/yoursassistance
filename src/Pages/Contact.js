@@ -29,12 +29,12 @@ const Contact = () => {
   };
   return (
     <Box>
-      <Box marginX="5%">
+      <Box marginX={{ base: "3%", md: "5%" }}>
         <Header />
 
         <Text
           fontWeight="700"
-          fontSize="40px"
+          fontSize={{ base: "24px", md: "40px" }}
           textAlign="center"
           marginTop="5%"
           color="#0298DA"
@@ -44,17 +44,21 @@ const Contact = () => {
 
         <Box
           backgroundColor="#0298DA"
-          borderRadius="20px"
-          marginX="10%"
+          borderRadius={{ base: "10px", md: "20px" }}
+          marginX={{ base: "0%", md: "10%" }}
           marginY="3%"
           paddingBottom="5%"
         >
-          <Box textAlign="center" marginX="10%">
+          <Box textAlign="center" marginX={{ base: "2%", md: "10%" }}>
             <Box color="white" padding="3% 0">
-              <Text fontWeight="500" fontSize="32px" marginTop="3%">
+              <Text
+                fontWeight="500"
+                fontSize={{ base: "20px", md: "32px" }}
+                marginTop="3%"
+              >
                 Talk to an Expert from our end
               </Text>
-              <Text>
+              <Text fontSize={{ base: "14px", md: "16px" }}>
                 Get our expert advise on how to transform your brand ideas to
                 something amazing
               </Text>
@@ -66,7 +70,7 @@ const Contact = () => {
               backgroundColor="white"
               marginBottom="7%"
             >
-              <Text fontSize="28px" padding="3% 0">
+              <Text  fontSize={{ base: "18px", md: "28px" }} padding="3% 0">
                 Get in touch and schedule a meeting to discuss on how our and of
                 our services can boost your company
               </Text>
@@ -75,47 +79,55 @@ const Contact = () => {
                 padding={{ base: "8% 3%", md: "3% 2%" }}
                 placeholder="Full Name"
                 type="text"
+                fontSize={{ base: "14px", md: "16px" }}
               />
               <Input
                 marginY={{ base: "5%", md: "2%" }}
                 padding={{ base: "8% 3%", md: "3% 2%" }}
                 placeholder="Company Name"
                 type="text"
+                fontSize={{ base: "14px", md: "16px" }}
               />
               <Input
                 marginY={{ base: "5%", md: "2%" }}
                 padding={{ base: "8% 3%", md: "3% 2%" }}
                 placeholder="Email Address"
                 type="email"
+                fontSize={{ base: "14px", md: "16px" }}
               />
               <Input
                 marginY={{ base: "5%", md: "2%" }}
                 padding={{ base: "8% 3%", md: "3% 2%" }}
                 placeholder="Phone Number"
                 type="phone"
+                fontSize={{ base: "14px", md: "16px" }}
               />
               <Input
                 marginY={{ base: "5%", md: "2%" }}
                 padding={{ base: "8% 3%", md: "3% 2%" }}
                 placeholder="Select Country"
+                fontSize={{ base: "14px", md: "16px" }}
               />
 
               <Input
                 marginY={{ base: "5%", md: "2%" }}
                 padding={{ base: "8% 3%", md: "3% 2%" }}
                 placeholder="Select City"
+                fontSize={{ base: "14px", md: "16px" }}
               />
 
               <Input
                 marginY={{ base: "5%", md: "2%" }}
                 padding={{ base: "8% 3%", md: "3% 2%" }}
                 placeholder="Select Service"
+                fontSize={{ base: "14px", md: "16px" }}
               />
 
               <Input
                 marginY={{ base: "5%", md: "2%" }}
                 padding={{ base: "8% 3%", md: "3% 2%" }}
                 placeholder="Select Country"
+                fontSize={{ base: "14px", md: "16px" }}
               />
 
               <Flex justifyContent={{ base: "center", md: "center" }}>
