@@ -19,6 +19,9 @@ import brand1 from "../Assets/Png/brandingImg1.png";
 import brand2 from "../Assets/Png/brandingImg2.png";
 import brand3 from "../Assets/Png/brandingImg3.png";
 import logoB from "../Assets/Svg/logoB.svg";
+import newsletter from "../Assets/Svg/newsletter.svg";
+import userGroup from "../Assets/Svg/userGroup.svg";
+import userSwitch from "../Assets/Svg/userSwitch.svg";
 import HomeServices from "../Components/HomeServices";
 import pageCover from "../Assets/Svg/pageCover.svg";
 import Carousel from "../Components/Carousel";
@@ -90,7 +93,7 @@ const HomePage = () => {
           transform: "scale(1.05)",
           backgroundColor: "rgba(2, 152, 218, 0.1)",
           transition: "transform 1s ease-in-out",
-        }} // Apply the hover effect
+        }}
       >
         <Image width="85%" src={imageSrc} />
         <Text
@@ -175,7 +178,12 @@ const HomePage = () => {
             color="white"
           >
             <Header />
-            <Flex flexDirection="column" justifyContent="center" height="80vh">
+            <Flex
+              flexDirection="column"
+              alignItems="center"
+              justifyContent="center"
+              height="100vh"
+            >
               <TypeAnimation
                 sequence={[
                   "It's not the best product that sells but the best marketed product.",
@@ -184,15 +192,16 @@ const HomePage = () => {
                 speed={30}
                 style={{
                   display: "inline-block",
-                  fontSize: "80px",
+                  fontSize: "70px",
                   color: "white",
                   fontWeight: "600",
                   width: "70%",
+                  textAlign: "center",
                 }}
                 repeat={0}
               />
 
-              <Flex marginTop="2%">
+              <Flex marginTop="2%" width="100%" justifyContent="center">
                 <Button
                   borderRadius="10px"
                   marginRight="1%"
@@ -212,6 +221,32 @@ const HomePage = () => {
                 >
                   About Us
                 </Button>
+              </Flex>
+
+              <Flex backgroundColor="white" width="70%" padding="2% 5%" borderRadius="10px" marginTop="10%">
+                <Flex flex="1">
+                  <Image src={userSwitch} />
+                  <Box marginLeft="3%">
+                    <Text color="#0298DA" fontSize="20px" fontWeight="bold">About Us</Text>
+                    <Text color="#7F7F7F">Get to know us</Text>
+                  </Box>
+                </Flex>
+
+                <Flex flex="1" marginRight="3%">
+                  <Image src={userGroup} />
+                  <Box marginLeft="3%">
+                    <Text color="#0298DA" fontSize="20px" fontWeight="bold">Services</Text>
+                    <Text color="#7F7F7F">See more on what we offer</Text>
+                  </Box>
+                </Flex>
+
+                <Flex flex="1">
+                  <Image src={newsletter} />
+                  <Box marginLeft="3%">
+                    <Text color="#0298DA" fontSize="20px" fontWeight="bold">Projects</Text>
+                    <Text color="#7F7F7F">Get more project update</Text>
+                  </Box>
+                </Flex>
               </Flex>
             </Flex>
           </Box>
@@ -265,14 +300,14 @@ const HomePage = () => {
           </Text>
           <Image
             marginTop="3%"
-            width={{ base: "70%", md: "100%" }}
+            width={{ base: "70%", md: "60%" }}
             src={logoB}
           />
           <Text
             marginTop="3%"
             width={{ base: "100%", md: "80%" }}
             textAlign={{ base: "left", md: "center" }}
-            fontSize={{base: "14px", md: "16px"}}
+            fontSize={{ base: "14px", md: "16px" }}
           >
             No two brands are alike, and neither are their challenges. We don't
             believe in cookie-cutter solutions – we work hand-in-hand with each
@@ -283,7 +318,7 @@ const HomePage = () => {
             marginTop="2%"
             width={{ base: "100%", md: "70%" }}
             textAlign={{ base: "left", md: "center" }}
-            fontSize={{base: "14px", md: "16px"}}
+            fontSize={{ base: "14px", md: "16px" }}
           >
             We're not afraid to push boundaries and embrace the latest trends.
             we stay ahead of the curve, ensuring their brand identity remains
@@ -298,7 +333,8 @@ const HomePage = () => {
             colorScheme="red"
             transition="1s ease-in"
             marginTop="3%"
-            fontSize={{base: "14px", md: "16px"}}
+            marginBottom="3%"
+            fontSize={{ base: "14px", md: "16px" }}
           >
             About Us
           </Button>

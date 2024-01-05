@@ -13,8 +13,8 @@ const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [isMobile] = useMediaQuery("(max-width: 768px)");
 
-  const handleDetails = (title, services) => {
-    setSelectedProject({ title, services });
+  const handleDetails = (title, services, navlink) => {
+    setSelectedProject({ title, services, navlink });
     setClicked(true);
   };
 
@@ -33,6 +33,7 @@ const Projects = () => {
         <ProjectDetails
           title={selectedProject.title}
           services={selectedProject.services}
+          navlink={selectedProject.navlink}
         />
       ) : (
         <Box paddingX="5%">
@@ -328,6 +329,7 @@ const Projects = () => {
                   imageSrc={project.imgSrc}
                   services={project.services}
                   title={project.title}
+                  navlink={project.titleNav}
                   style={{
                     marginTop: "20px",
                     textAlign: index % 2 === 0 ? "left" : "right",
@@ -344,12 +346,13 @@ const Projects = () => {
             >
               {data.slice(0, visibleProjects).map((project, index) => (
                 <ProjectCard
-                  onClick={() => handleDetails(project.title, project.services)}
+                  onClick={() => handleDetails(project.title, project.services, project.titleNav)}
                   key={index}
                   date={project.date}
                   imageSrc={project.imgSrc}
                   services={project.services}
                   title={project.title}
+                  navlink={project.titleNav}
                   style={{
                     marginTop: index % 2 === 0 ? "0" : "90px",
                     textAlign: index % 2 === 0 ? "left" : "right",
@@ -373,7 +376,7 @@ const Projects = () => {
                 colorScheme="red"
                 transition="1s ease-in"
                 onClick={handleViewMore}
-                marginY={{ base: "5%", md: "0" }}
+                marginY={{ base: "5%", md: "5%" }}
               >
                 View More
               </Button>

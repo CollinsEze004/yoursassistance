@@ -157,7 +157,7 @@ const Carousel = () => {
       </Box>
       <Flex p={{base: "5px",md:"30px"}}>
         <Flex
-          height={{base: "580px", md:"780px"}}
+          height={{base: "580px", md:"880px"}}
           paddingTop="10%"
           overflowX="scroll"
           overflowY="hidden"

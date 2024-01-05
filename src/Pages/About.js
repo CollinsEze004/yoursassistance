@@ -34,7 +34,7 @@ const About = () => {
       <Box marginX="5%" color="#393637" fontWeight="600">
         <Box marginTop="2%" width={{ base: "100%", md: "70%" }}>
           <Text
-            fontSize={{ base: "28px", md: "96px" }}
+            fontSize={{ base: "28px", md: "72px" }}
             fontWeight="bold"
             color="#0298DA"
           >
@@ -75,7 +75,7 @@ const About = () => {
             flex="1"
             marginTop={{ base: "15%", md: "0" }}
           >
-            <Image width={{ base: "80%" }} src={logoB} />
+            <Image width={{ base: "80%", md: "100%" }} src={logoB} />
           </Flex>
         </Flex>
 
@@ -260,7 +260,7 @@ const About = () => {
 
       <Flex
         justifyContent="center"
-        marginY={{base: "10%",md:"5%"}}
+        marginY={{ base: "10%", md: "5%" }}
         marginX={{ base: "5%", md: "0" }}
       >
         <Image src={pageCover} />

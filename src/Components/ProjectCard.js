@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { Box, Text, Image } from "@chakra-ui/react";
 
-const ProjectCard = ({ date, imageSrc, style, service, title, onClick }) => {
+const ProjectCard = ({ date, imageSrc, style, navlink, title, onClick }) => {
   const [isHovered, setIsHovered] = useState(false);
  
   return (
@@ -46,6 +46,7 @@ const ProjectCard = ({ date, imageSrc, style, service, title, onClick }) => {
             cursor="pointer"
             onClick={onClick}
             title={title}
+            navlink={navlink}
           >
             Click to View
           </Box>

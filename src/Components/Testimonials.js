@@ -5,7 +5,7 @@ import left from "../Assets/Svg/right.svg";
 import right from "../Assets/Svg/left.svg";
 const Testimonials = () => {
   return (
-    <Box backgroundColor="#F9F0F0" paddingTop="10%" marginY="3%">
+    <Box backgroundColor="#F9F0F0" paddingTop={{base: "10%", md: "5%"}} marginY="3%">
       <Box>
         <Text
           fontSize={{ base: "26px", md: "54px" }}
@@ -27,7 +27,7 @@ const Testimonials = () => {
         backgroundColor="white"
       >
         <Box flex="1" marginRight="3%">
-          <Image width={{base: "30%"}} src={img} />
+          <Image width={{base: "30%", md: "90%"}} src={img} />
         </Box>
         <Box flex="1.5">
           <Text
