@@ -1,9 +1,9 @@
 import { Box, Flex, Text, Image } from "@chakra-ui/react";
 import React from "react";
 import Carousel from "./DreaditCarousel";
-import brandPattern from "../Assets/Dreadit/brandpattern.jpg";
+import brandPattern from "../Assets/Softlink/brandpattern.png";
 import typography from "../Assets/Dreadit/typography.jpg";
-import CarouselTwo from "./DreaditCarouselTwo";
+import CarouselTwo from "./SoftlinkCarouselTwo";
 
 const Softlink = () => {
   return (

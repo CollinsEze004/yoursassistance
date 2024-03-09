@@ -123,6 +123,7 @@ const HomePage = () => {
           // width="100%"
           height="626px"
           backgroundImage={backgroundsMobile[backgroundIndexMobile]}
+          
           backgroundRepeat="no-repeat"
           backgroundSize="contain"
           transition="background-image 1s ease-in"
