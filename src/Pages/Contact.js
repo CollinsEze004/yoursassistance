@@ -29,8 +29,9 @@ const Contact = () => {
   };
   return (
     <Box>
-      <Box marginX={{ base: "3%", md: "5%" }}>
-        <Header />
+      <Header />
+      <Box marginX={{ base: "3%", md: "5%" }} marginTop="8%">
+        
 
         <Text
           fontWeight="700"

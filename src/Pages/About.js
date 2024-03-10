@@ -14,8 +14,9 @@ import Footer from "../Components/Footer";
 const About = () => {
   return (
     <Box>
-      <Box paddingX="3%" backgroundColor="#0298DA">
-        <Header />
+      <Header />
+      <Box paddingX="3%" backgroundColor="#0298DA" marginTop="5%">
+        
         <Flex justifyContent="center">
           <Flex
             width={{ base: "90%", md: "50%" }}
