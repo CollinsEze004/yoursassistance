@@ -31,7 +31,7 @@ import work1 from "../Assets/Yoursassistance/Work 1.png";
 import brand from "../Assets/Yoursassistance/Brand.png";
 import frame9044 from "../Assets/Yoursassistance/Frame 9044.png";
 import frame9047 from "../Assets/Yoursassistance/Frame 9047.png";
-import frame9053 from "../Assets/Yoursassistance/Frame 9053.png";
+import frame9053 from "../Assets/Svg/Frame 9053.svg";
 import frame9055 from "../Assets/Yoursassistance/Frame 9055.png";
 import rectangle1 from "../Assets/Yoursassistance/Rectangle 1.png";
 import group3 from "../Assets/Yoursassistance/Group 3.png";
@@ -49,7 +49,7 @@ const HomePage = () => {
   const [backgroundIndex, setBackgroundIndex] = useState(0);
   const [backgroundIndexMobile, setBackgroundIndexMobile] = useState(0);
   const [isMobile] = useMediaQuery("(max-width: 768px)");
-  const {onOpen, onClose, isOpen} = useDisclosure()
+  const { onOpen, onClose, isOpen } = useDisclosure();
 
   const backgrounds = [
     background1,
@@ -159,7 +159,7 @@ const HomePage = () => {
           transition="background-image 1s ease-in"
         >
           <Box height="606px" paddingX="4%">
-            <Header onOpen={onOpen}/>
+            <Header onOpen={onOpen} />
 
             <Image src={Your} width="80%" height="6vh" marginTop="15%" />
             <Text
@@ -284,7 +284,6 @@ const HomePage = () => {
                   cursor="pointer"
                   onClick={() => onOpen()}
                 />
-                
               </Flex>
             </Box>
           </Flex>
@@ -320,7 +319,6 @@ const HomePage = () => {
             title="Builds Trust and Credibility"
             description="A well-developed brand conveys professionalism and reliability, boosting your customer's confidence in your business. "
             description2="Consistent branding across all platforms - website, social media, marketing materials - reinforces this positive image."
-            
           />
 
           <AnimatedCard
@@ -330,33 +328,71 @@ const HomePage = () => {
             description2="This messaging resonates with customers who identify with your brand, making them more likely to choose you over competitors."
           />
         </Flex>
-
-        {isMobile ? (
-          <Box>
+        <Box>
+          <Flex
+            flexDirection={{ base: "column", md: "row" }}
+            width="97%"
+            justifyContent="space-between"
+            margin="auto"
+            marginTop="7%"
+            gap="30px"
+            p="2"
+          >
             <Flex
               flexDirection="column"
-              width="97%"
-              margin="auto"
-              marginTop="9%"
+              width={{ base: "95%", md: "42%" }}
+              mt={{ base: "2", md: "7" }}
+              gap="14px"
             >
-              <Image src={frame9053} width="95%" height="65vh" />
-              <Image src={frame9055} width="95%" height="65vh" marginTop="9%" />
+              <Text
+                color="#ED3237"
+                fontSize={{ base: "32px", md: "48px" }}
+                fontWeight="600"
+              >
+                Recent Projects
+              </Text>
+              <span style={{ color: "#0298DA", fontSize: "16px" }}>
+                We take pride with our{" "}
+                <span style={{ color: "#ED3237" }}>Works</span> and have brought
+                satisfaction and
+                <span style={{ color: "#ED3237" }}> Growth</span> to our client
+                and <span style={{ color: "#ED3237" }}>Businesses</span>
+              </span>
+              <Image src={frame9053} />
             </Flex>
-          </Box>
-        ) : (
-          <Box>
             <Flex
-              flexDirection="row"
-              width="97%"
-              justifyContent="space-between"
-              margin="auto"
-              marginTop="9%"
+              flexDirection="column"
+              width={{ base: "95%", md: "50%" }}
+              gap="10px"
             >
-              <Image src={frame9053} width="45%" height="93vh" />
-              <Image src={frame9055} width="45%" height="95vh" />
+              <Image src={frame9055} />
+
+              <Flex flexDirection="column" gap="4px">
+                <Text color="#393637" fontSize="20px" fontWeight="600">
+                  Seedtime Landscape
+                </Text>
+
+                <Text color="#979797" fontSize="14px">
+                  No two brands are alike, and neither are their challenges. We
+                  don't believe in cookie-cutter solutions – we work
+                  hand-in-hand with each client to craft a bespoke brand
+                  identity and digital strategy that drives real results.
+                </Text>
+
+                <Button
+                  width="130px"
+                  p="5"
+                  bgColor="#ED3237"
+                  color="#fff"
+                  mt="2"
+                  fontSize="12px"
+                >
+                  About Us
+                </Button>
+              </Flex>
             </Flex>
-          </Box>
-        )}
+          </Flex>
+        </Box>
       </Box>
       <HomeServices />
       <Testimonials />
@@ -485,7 +521,7 @@ const HomePage = () => {
         <Image width={{ base: "100%", md: "100%" }} src={pageCover} />
       </Flex>
       <Footer />
-      <NavDrawer onClose={onClose} isOpen={isOpen}  />
+      <NavDrawer onClose={onClose} isOpen={isOpen} />
     </Box>
   );
 };
