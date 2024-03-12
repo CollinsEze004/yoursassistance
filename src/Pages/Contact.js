@@ -18,6 +18,7 @@ import Footer from "../Components/Footer";
 import pageCover from "../Assets/Svg/pageCover.svg";
 import caution from "../Assets/Svg/caution.svg";
 import success from "../Assets/Svg/success.svg";
+import NavDrawer from "../Components/NavDrawer";
 
 const Contact = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -29,7 +30,7 @@ const Contact = () => {
   };
   return (
     <Box>
-      <Header />
+      <Header onOpen={onOpen}/>
       <Box marginX={{ base: "3%", md: "5%" }} marginTop="8%">
         
 
@@ -220,6 +221,7 @@ const Contact = () => {
           <Image src={pageCover} />
         </Flex>
         <Footer />
+        <NavDrawer onClose={onClose} isOpen={isOpen}/>
       </Box>
     </Box>
   );

@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Text, Image } from "@chakra-ui/react";
+import { Box, Button, Flex, Text, Image, useDisclosure } from "@chakra-ui/react";
 import React, { useState, useEffect } from "react";
 import HeaderTwo from "../Components/HeaderTwo";
 import ProjectCard from "../Components/ProjectCard";
@@ -7,23 +7,24 @@ import Footer from "../Components/Footer";
 import data from "../Utilities/Data";
 import ProjectDetails from "./ProjectDetails";
 import { useMediaQuery } from "@chakra-ui/react";
-import Projec from "../Assets/Yoursassistance/Projects.png"
-import rectangle2 from "../Assets/Yoursassistance/Rectangle 2.png"
-import rectangle3 from "../Assets/Yoursassistance/Rectangle 3.png"
-import rectangle4 from "../Assets/Yoursassistance/Rectangle 4.png"
-import rectangle5 from "../Assets/Yoursassistance/Rectangle 5.png"
-import rectangle7 from "../Assets/Yoursassistance/Rectangle 7.png"
-import rectangle8 from "../Assets/Yoursassistance/Rectangle 8.png"
-import rectangle9 from "../Assets/Yoursassistance/Rectangle 9.png"
+import Projec from "../Assets/Yoursassistance/Projects.png";
+import rectangle2 from "../Assets/Yoursassistance/Rectangle 2.png";
+import rectangle3 from "../Assets/Yoursassistance/Rectangle 3.png";
+import rectangle4 from "../Assets/Yoursassistance/Rectangle 4.png";
+import rectangle5 from "../Assets/Yoursassistance/Rectangle 5.png";
+import rectangle7 from "../Assets/Yoursassistance/Rectangle 7.png";
+import rectangle8 from "../Assets/Yoursassistance/Rectangle 8.png";
+import rectangle9 from "../Assets/Yoursassistance/Rectangle 9.png";
 import brands from "../Assets/Yoursassistance/brands.png";
 import frame9044 from "../Assets/Yoursassistance/Frame 9044.png";
 import frame9047 from "../Assets/Yoursassistance/Frame 9047.png";
-
+import NavDrawer from "../Components/NavDrawer";
 
 const Projects = () => {
   const [clicked, setClicked] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
   const [isMobile] = useMediaQuery("(max-width: 768px)");
+  const {onOpen, onClose, isOpen} = useDisclosure()
 
   const handleDetails = (title, services, navlink) => {
     setSelectedProject({ title, services, navlink });
@@ -70,125 +71,146 @@ const Projects = () => {
         />
       ) : (
         <Box paddingX="5%">
-          <HeaderTwo />
+          <HeaderTwo onOpen={onOpen} />
 
-        {isMobile ? (
-          <Box width="100%">
-          <Flex
-            flexDirection="column"
-            justifyContent="spacebetween"
-            marginTop="5%"
-          >
-            <Box width="94%">
-            <Image src={Projec} width="80%" height="10vh" marginTop="8%" />
-              <Text
-                color="#0298DA"
-                fontSize="24px"
-                fontWeight="600"
-                lineHeight="29.26px"
-                paddingTop="7%"
-                paddingLeft="2%"
+          {isMobile ? (
+            <Box width="100%">
+              <Flex
+                flexDirection="column"
+                justifyContent="spacebetween"
+                marginTop="5%"
               >
-                It’s not the best product that sells but the best marketed
-                product.
-              </Text>
-              <Flex marginTop="3%" width="100%" marginLeft="2%">
-                <Button
-                  borderRadius="10px"
-                  marginRight="3%"
-                  padding="2% 3%"
-                  backgroundColor="#0298DA"
-                  color="white"
-                  colorScheme="red"
-                  transition="1s ease-in"
-                >
-                  Explore Services
-                </Button>
-                <Button
-                  borderRadius="10px"
-                  padding="2% 3%"
-                  backgroundColor="white"
-                  color="#0298DA"
-                >
-                  About U
-                </Button>
+                <Box width="94%">
+                  <Image
+                    src={Projec}
+                    width="80%"
+                    height="10vh"
+                    marginTop="8%"
+                  />
+                  <Text
+                    color="#0298DA"
+                    fontSize="24px"
+                    fontWeight="600"
+                    lineHeight="29.26px"
+                    paddingTop="7%"
+                    paddingLeft="2%"
+                  >
+                    It’s not the best product that sells but the best marketed
+                    product.
+                  </Text>
+                  <Flex marginTop="3%" width="100%" marginLeft="2%">
+                    <Button
+                      borderRadius="10px"
+                      marginRight="3%"
+                      padding="2% 3%"
+                      backgroundColor="#0298DA"
+                      color="white"
+                      colorScheme="red"
+                      transition="1s ease-in"
+                    >
+                      Explore Services
+                    </Button>
+                    <Button
+                      borderRadius="10px"
+                      padding="2% 3%"
+                      backgroundColor="white"
+                      color="#0298DA"
+                    >
+                      About U
+                    </Button>
+                  </Flex>
+                </Box>
+                <Box width="100%" marginTop="7%">
+                  <Image
+                    src={backgrounds[backgroundIndex]}
+                    width="100%"
+                    transition="image 1s ease-in"
+                  />
+                </Box>
               </Flex>
             </Box>
-            <Box width="100%" marginTop="7%">
-              <Image src={backgrounds[backgroundIndex]} width="100%" transition="image 1s ease-in" />
-            </Box>
-          </Flex>
-
-          
-          </Box>
-        ) : (
-          <Box marginTop="10%">
-          <Flex
-            flexDirection="row"
-            justifyContent="spacebetween"
-            marginTop="5%"
-          >
-            <Box width="44%">
-            <Image src={Projec} width="50%" height="10vh" marginTop="15%" />
-              <Text
-                color="#0298DA"
-                fontSize="34px"
-                fontWeight="600"
-                lineHeight="48.76px"
-                paddingTop="5%"
-                paddingLeft="2%"
+          ) : (
+            <Box marginTop="10%">
+              <Flex
+                flexDirection="row"
+                justifyContent="spacebetween"
+                marginTop="5%"
               >
-                It’s not the best product that sells but the best marketed
-                product.
-              </Text>
-              <Flex marginTop="3%" width="100%" marginLeft="2%">
-                <Button
-                  borderRadius="10px"
-                  marginRight="1%"
-                  padding="2% 3%"
-                  backgroundColor="#0298DA"
-                  color="white"
-                  colorScheme="red"
-                  transition="1s ease-in"
-                >
-                  Explore Services
-                </Button>
-                <Button
-                  borderRadius="10px"
-                  padding="2% 3%"
-                  backgroundColor="white"
-                  color="#0298DA"
-                >
-                  About U
-                </Button>
+                <Box width="44%">
+                  <Image
+                    src={Projec}
+                    width="50%"
+                    height="10vh"
+                    marginTop="15%"
+                  />
+                  <Text
+                    color="#0298DA"
+                    fontSize="34px"
+                    fontWeight="600"
+                    lineHeight="48.76px"
+                    paddingTop="5%"
+                    paddingLeft="2%"
+                  >
+                    It’s not the best product that sells but the best marketed
+                    product.
+                  </Text>
+                  <Flex marginTop="3%" width="100%" marginLeft="2%">
+                    <Button
+                      borderRadius="10px"
+                      marginRight="1%"
+                      padding="2% 3%"
+                      backgroundColor="#0298DA"
+                      color="white"
+                      colorScheme="red"
+                      transition="1s ease-in"
+                    >
+                      Explore Services
+                    </Button>
+                    <Button
+                      borderRadius="10px"
+                      padding="2% 3%"
+                      backgroundColor="white"
+                      color="#0298DA"
+                    >
+                      About U
+                    </Button>
+                  </Flex>
+                </Box>
+                <Box width="54%">
+                  <Image
+                    src={backgrounds[backgroundIndex]}
+                    width="100%"
+                    transition="image 1s ease-in"
+                  />
+                </Box>
               </Flex>
-            </Box>
-            <Box width="54%">
-              <Image src={backgrounds[backgroundIndex]} width="100%" transition="image 1s ease-in" />
-            </Box>
-          </Flex>
 
-          <Box width="96%" margin="auto">
-          <Flex
-            flexDirection="row"
-            justifyContent="spacebetween"
-            marginTop="5%"
-            alignItems="center"
-          >
-            <Box width="42%">
-            <Flex width="100%" marginLeft="2%">
-              <Image src={frame9044} width="40%" height="10.5vh" />
-              <Image src={frame9047} width="40%" height="10.5vh" marginLeft="4%" />
-            </Flex>
+              <Box width="96%" margin="auto">
+                <Flex
+                  flexDirection="row"
+                  justifyContent="spacebetween"
+                  marginTop="5%"
+                  alignItems="center"
+                >
+                  <Box width="42%">
+                    <Flex width="100%" marginLeft="2%">
+                      <Image src={frame9044} width="40%" height="10.5vh" />
+                      <Image
+                        src={frame9047}
+                        width="40%"
+                        height="10.5vh"
+                        marginLeft="4%"
+                      />
+                    </Flex>
+                  </Box>
+                  <Box width="46%" marginLeft="9%">
+                    <Image src={brands} width="97%" />
+                  </Box>
+                </Flex>
+              </Box>
             </Box>
-            <Box width="46%" marginLeft="9%">
-            <Image src={brands} width="97%" />
-            </Box>
-          </Flex>
-          </Box>
-          </Box>
-        )}
-          
+          )}
+
           <Flex
             flexDirection="column"
             justifyContent="center"
@@ -497,7 +519,13 @@ const Projects = () => {
             >
               {data.slice(0, visibleProjects).map((project, index) => (
                 <ProjectCard
-                  onClick={() => handleDetails(project.title, project.services, project.titleNav)}
+                  onClick={() =>
+                    handleDetails(
+                      project.title,
+                      project.services,
+                      project.titleNav
+                    )
+                  }
                   key={index}
                   date={project.date}
                   imageSrc={project.imgSrc}
@@ -541,6 +569,7 @@ const Projects = () => {
       )}
 
       <Footer />
+      <NavDrawer onClose={onClose} isOpen={isOpen}/>
     </Box>
   );
 };
