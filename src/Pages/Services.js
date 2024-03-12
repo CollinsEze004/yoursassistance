@@ -1,12 +1,14 @@
-import { Box, Button, Flex, Text, Image } from "@chakra-ui/react";
+import { Box, Button, Flex, Text, Image, useDisclosure } from "@chakra-ui/react";
 import React, { useState } from "react";
 import Header from "../Components/HeaderTwo";
 import ServiceFlex from "../Components/ServiceFlex";
 import pageCover from "../Assets/Svg/pageCover.svg";
 import Footer from "../Components/Footer";
+import NavDrawer from "../Components/NavDrawer";
 
 const Services = () => {
   const [selectedButton, setSelectedButton] = useState("Discover");
+  const {onOpen, onClose, isOpen} = useDisclosure()
 
   const handleClick = (button) => {
     setSelectedButton(button);
@@ -19,7 +21,7 @@ const Services = () => {
   return (
     <Box>
       <Box marginX="5%" color="#393637">
-        <Header />
+        <Header onOpen={onOpen}/>
         <Flex marginTop="10%" flexDirection={{ base: "column", md: "row" }}>
           <Box flex="1">
             <Text
@@ -203,6 +205,7 @@ const Services = () => {
         </Flex>
       </Box>
       <Footer />
+      <NavDrawer onClose={onClose} isOpen={isOpen}/>
     </Box>
   );
 };

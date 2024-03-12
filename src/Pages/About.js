@@ -1,6 +1,5 @@
-import { Box, Button, Flex, Image, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Image, Text, useDisclosure } from "@chakra-ui/react";
 import React from "react";
-import Header from "../Components/Header";
 import aboutBack from "../Assets/Png/aboutBack.png";
 import logoB from "../Assets/Svg/logoB.svg";
 import img1 from "../Assets/Png/aboutImg1.png";
@@ -10,11 +9,14 @@ import img4 from "../Assets/Png/aboutImg4.png";
 import img5 from "../Assets/Png/aboutImg5.png";
 import pageCover from "../Assets/Svg/pageCover.svg";
 import Footer from "../Components/Footer";
+import Header from "../Components/HeaderTwo";
+import NavDrawer from "../Components/NavDrawer";
 
 const About = () => {
+  const {onOpen, onClose, isOpen} = useDisclosure()
   return (
     <Box>
-      <Header />
+      <Header onOpen={onOpen} />
       <Box paddingX="3%" backgroundColor="#0298DA" marginTop="5%">
         
         <Flex justifyContent="center">
@@ -268,6 +270,7 @@ const About = () => {
       </Flex>
 
       <Footer />
+      <NavDrawer onClose={onClose} isOpen={isOpen}/>
     </Box>
   );
 };

@@ -15,7 +15,7 @@ const VerticalText = ({ text }) => {
   return (
     <Text
       style={styles}
-      fontSize={{ base: "28px", md: "128px" }}
+      fontSize={{ base: "28px", md: "108px" }}
       display={{ base: "none", md: "block" }}
       marginTop="5%"
     >

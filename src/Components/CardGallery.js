@@ -91,7 +91,26 @@ const Card = ({ dataImage, children }) => {
   );
 };
 
+const ServiceCard = ({ src }) => (
+  <Card flexBasis={{ base: "100%", sm: "50%", md: "50%", lg: "33.33%" }}>
+    <Image src={src} />
+  </Card>
+);
+
 const CardGallery = () => {
+  // Define the services and their corresponding image sources
+  const services = [
+    { id: 1, src: service1 },
+    { id: 2, src: service2 },
+    { id: 3, src: service3 },
+    { id: 4, src: service4 },
+    { id: 5, src: service5 },
+    { id: 6, src: service6 },
+    { id: 7, src: service7 },
+    { id: 8, src: service8 },
+    { id: 9, src: service9 },
+  ];
+
   return (
     <Flex
       direction="column"
@@ -99,42 +118,10 @@ const CardGallery = () => {
       p={{ base: "0", md: "4" }}
       style={{ perspective: 1000 }}
     >
-      <Flex className="container" wrap="wrap" justify="center">
-        <Card>
-          <Image src={service1} />
-        </Card>
-
-        <Card>
-          <Image src={service2} />
-        </Card>
-
-        <Card>
-          <Image src={service3} />
-        </Card>
-
-        <Card>
-          <Image src={service4} />
-        </Card>
-
-        <Card>
-          <Image src={service5} />
-        </Card>
-
-        <Card>
-          <Image src={service6} />
-        </Card>
-
-        <Card>
-          <Image src={service7} />
-        </Card>
-
-        <Card>
-          <Image src={service8} />
-        </Card>
-
-        <Card>
-          <Image src={service9} />
-        </Card>
+      <Flex className="container" wrap="wrap" justify="center" flexDirection={{ base: "column", sm: "row", md: "row", lg: "row" }}>
+        {services.map((service) => (
+          <ServiceCard key={service.id} src={service.src} />
+        ))}
       </Flex>
     </Flex>
   );
